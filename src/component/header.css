@@ -1,0 +1,36 @@
+.navBar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  color: whitesmoke;
+  background-color: #f9629f;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: left;
+  font-size: x-large;
+}
+.search-bar {
+  margin: 10px 0px 10px 0px;
+  padding: 0px 20px 0px 20px;
+  width: 400px;
+  height: 20px;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  border-radius: 1rem;
+}
+.link {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.link:hover {
+  transition: 0.2s;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
+    0 8px 16px rgba(0, 0, 0, 0.11);
+}
+.logo {
+  box-shadow: 0px 1px 5px 0px rgba(155, 155, 155, 1) inset;
+}

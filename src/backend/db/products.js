@@ -1,30 +1,138 @@
 import { v4 as uuid } from "uuid";
 
-/**
- * Product Database can be added here.
- * You can add products of your wish with different attributes
- * */
-
 export const products = [
   {
-    _id: uuid(),
-    title: "You Can WIN",
-    author: "Shiv Khera",
-    price: "5000",
-    categoryName: "non-fiction",
+    id: 1,
+    name: "Product Name",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    category: "Ring",
+    gst: 0.18,
+    img:
+      "https://i.pinimg.com/564x/aa/1c/81/aa1c8171f550fe31716386ab8d68f056.jpg",
   },
   {
-    _id: uuid(),
-    title: "You are Winner",
-    author: "Junaid Qureshi",
-    price: "3000",
-    categoryName: "horror",
+    id: 2,
+    name: "Product Name",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    category: "Ring",
+    gst: 0.18,
+    img:
+      "https://i.pinimg.com/564x/aa/1c/81/aa1c8171f550fe31716386ab8d68f056.jpg",
+  },
+
+  {
+    id: 3,
+    name: "Product Name",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    category: "Ring",
+    gst: 0.18,
+    img:
+      "https://i.pinimg.com/564x/aa/1c/81/aa1c8171f550fe31716386ab8d68f056.jpg",
   },
   {
-    _id: uuid(),
-    title: "Think and Grow Rich",
-    author: "Shiv Khera",
-    price: "1000",
-    categoryName: "fiction",
+    id: 4,
+    name: "Product Name",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    category: "Ring",
+    gst: 0.18,
+    img:
+      "https://i.pinimg.com/564x/aa/1c/81/aa1c8171f550fe31716386ab8d68f056.jpg",
+  },
+  {
+    id: 5,
+    name: "Product Name",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    category: "Mangalsutra",
+    gst: 0.18,
+    img:
+      "https://i.pinimg.com/564x/aa/1c/81/aa1c8171f550fe31716386ab8d68f056.jpg",
+  },
+  {
+    id: 6,
+    name: "Product Name",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    category: "Mangalsutra",
+    gst: 0.18,
+    img:
+      "https://i.pinimg.com/564x/aa/1c/81/aa1c8171f550fe31716386ab8d68f056.jpg",
+  },
+  {
+    id: 7,
+
+    name: "Product Name",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    category: "Mangalsutra",
+    gst: 0.18,
+    img:
+      "https://i.pinimg.com/564x/aa/1c/81/aa1c8171f550fe31716386ab8d68f056.jpg",
+  },
+  {
+    id: 8,
+    name: "Product Name",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    category: "Bracelet",
+    gst: 0.18,
+    img:
+      "https://i.pinimg.com/564x/aa/1c/81/aa1c8171f550fe31716386ab8d68f056.jpg",
+  },
+  {
+    id: 9,
+    name: "Product Name",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    category: "Bracelet",
+    gst: 0.18,
+    img:
+      "https://i.pinimg.com/564x/aa/1c/81/aa1c8171f550fe31716386ab8d68f056.jpg",
+  },
+  {
+    id: 10,
+    name: "Product Name",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    category: "Bracelet",
+    gst: 0.18,
+    img:
+      "https://i.pinimg.com/564x/aa/1c/81/aa1c8171f550fe31716386ab8d68f056.jpg",
+  },
+  {
+    id: 11,
+    name: "Product Name",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    category: "Bracelet",
+    gst: 0.18,
+    img:
+      "https://i.pinimg.com/564x/aa/1c/81/aa1c8171f550fe31716386ab8d68f056.jpg",
+  },
+  {
+    id: 12,
+    name: "Product Name",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    category: "Bracelet",
+    gst: 0.18,
+    img:
+      "https://i.pinimg.com/564x/aa/1c/81/aa1c8171f550fe31716386ab8d68f056.jpg",
   },
 ];
