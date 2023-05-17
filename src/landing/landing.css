@@ -1,0 +1,22 @@
+.navBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-around;
+  color: whitesmoke;
+  background-color: #f9629f;
+  padding: 0.5rem;
+}
+h1 {
+  text-align: left;
+}
+.search-bar {
+  width: 35%;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  border-radius: 1rem;
+  justify-content: center;
+}
+.link {
+  color: whitesmoke;
+}
