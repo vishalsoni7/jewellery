@@ -4,63 +4,88 @@ import "../product/product.css";
 
 export const mails = [
   {
-    mId: "guid-1",
-    subject: "Training Program",
-    content: "About Microsoft Virtual Academy<br/>Microsoft Virtua",
+    id: 1,
+    name: "Gold ring",
+    by: "My Jwels",
+    category: "Ring",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    gst: 0.18,
+    img: "./LR00055-6__1450266466.jpg",
   },
   {
-    mId: "guid-2",
-
-    subject: "Empower your future",
-    content: "We foster our pipeline of future leaders with 47",
+    id: 1,
+    name: "Gold ring",
+    by: "My Jwels",
+    category: "Ring",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    gst: 0.18,
+    img: "./LR00055-6__1450266466.jpg",
   },
   {
-    mId: "guid-3",
-    unread: true,
-    isStarred: true,
-    subject: "Pre Approved Loan",
-    content:
-      "Congratulations ! <u>Credit card<u> is being shipped to you today!",
+    id: 1,
+    name: "Gold ring",
+    by: "My Jwels",
+    category: "Ring",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    gst: 0.18,
+    img: "./LR00055-6__1450266466.jpg",
   },
   {
-    mId: "guid-3",
-    unread: true,
-    isStarred: true,
-    subject: "Pre Approved Loan",
-    content:
-      "Congratulations ! <u>Credit card<u> is being shipped to you today!",
+    id: 1,
+    name: "Gold ring",
+    by: "My Jwels",
+    category: "Ring",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    gst: 0.18,
+    img: "./LR00055-6__1450266466.jpg",
   },
   {
-    mId: "guid-3",
-    unread: true,
-    isStarred: true,
-    subject: "Pre Approved Loan",
-    content:
-      "Congratulations ! <u>Credit card<u> is being shipped to you today!",
+    id: 1,
+    name: "Gold ring",
+    by: "My Jwels",
+    category: "Ring",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    gst: 0.18,
+    img: "./LR00055-6__1450266466.jpg",
+  },
+  {
+    id: 1,
+    name: "Gold ring",
+    by: "My Jwels",
+    category: "Ring",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    gst: 0.18,
+    img: "./LR00055-6__1450266466.jpg",
   },
 ];
 
 export const Product = () => {
   return (
     <div>
-      <h1> Products </h1>
-      <aside
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-        }}
-      >
-        <div className="cardLayout">
-          {mails.map((item) => (
-            <div className="card">
-              <img src="./logo192.jpeg" alt="img" />
-              <h4>{item.subject}</h4>
-              <p>{item.content}</p>
-              <button className="card-button"> order now </button>
-            </div>
-          ))}{" "}
-        </div>
-      </aside>
+      <h2 className="heading"> All products</h2>
+      <div className="product-cardLayout">
+        {mails.map((item) => (
+          <div className="product-card">
+            <img className="product-img" src="./landing_image.jpeg" alt="img" />
+            <h3>Product: {item.name} </h3>
+            <p> By: {item.by} </p>
+            <p> Price: {item.price} ₹</p>
+            <button className="card-button"> Add to Cart </button>
+          </div>
+        ))}{" "}
+      </div>
     </div>
   );
 };

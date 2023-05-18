@@ -1,29 +1,62 @@
 import React from "react";
 
+import "../wishlist/wishlist.css";
+
 export const mails = [
   {
-    mId: "guid-1",
-
-    subject: "Training Program",
-    content:
-      "About Microsoft Virtual Academy<br/>Microsoft Virtual Academy provides free online training by world-class experts to help you build your technical skills and advance your career. Make it your destination of choice to get started on the latest Microsoft technologies and join this vibrant community.",
+    id: 1,
+    name: "Gold ring",
+    by: "My Jwels",
+    category: "Ring",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    gst: 0.18,
+    img: "./LR00055-6__1450266466.jpg",
+  },
+  {
+    id: 1,
+    name: "Gold ring",
+    by: "My Jwels",
+    category: "Ring",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    gst: 0.18,
+    img: "./LR00055-6__1450266466.jpg",
+  },
+  {
+    id: 1,
+    name: "Gold ring",
+    by: "My Jwels",
+    category: "Ring",
+    price: 9.99,
+    weight: "500g",
+    metal: "Gold",
+    gst: 0.18,
+    img: "./LR00055-6__1450266466.jpg",
   },
 ];
 
 export const WishList = () => {
   return (
-    <div style={{ margin: "0px", padding: "0px" }}>
-      <h1> My wish list </h1>
-      <div className="card">
+    <div>
+      <div className="mainDiv">
         {" "}
+        <h1 className="heading"> My wish list </h1>
         {mails.map((item) => (
-          <>
-            <img src="./logo192.jpeg" alt="img" />
-
-            <h1> {item.subject} </h1>
-            <p> {item.content} </p>
-          </>
-        ))}{" "}
+          <div className="card">
+            <img
+              className="wishlist-img"
+              src="./LR00055-6__1450266466.jpg"
+              alt="img"
+            />
+            <h3>Product: {item.name} </h3>
+            <p> By: {item.by} </p>
+            <p> Price: {item.price} ₹</p>
+            <button> Move to Cart </button>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -4,54 +4,51 @@ import { Link } from "react-router-dom";
 
 import "../landing/landing.css";
 
-import img1 from "../landing/img/mangalsutra.jpeg";
-
 export const Landing = () => {
   return (
     <div>
-      <div>
-        <img className="img" src={img1} alt="landing img" />
+      <div className="container">
+        <img className="landing-img" src="./landing_image.jpeg" />
       </div>
+
       <div>
-        <p> Ring </p>
-        <p>
-          Exquisite and versatile, our collection of rings features captivating
-          designs crafted from premium materials, adding a touch of elegance and
-          individuality to any occasion.{" "}
-        </p>
-      </div>
-      <div>
-        <p>Mangalsutra</p>
-        <p>
-          Exquisitely crafted with intricate detailing and precious materials,
-          our mangalsutras are designed to honor the sacred bond of marriage,
-          offering timeless beauty and elegance to adorn the neckline of the
-          bride.
-        </p>
-      </div>
-      <div className="circle">
-        <p> Bracelet </p>
-        <p>
-          Elevate your style with our enchanting bracelet collection, featuring
-          a diverse range of designs meticulously crafted to accentuate your
-          wrist.
+        <h1 className="category-heading"> Top Collections</h1>
+        <p className="category-description">
+          Our jewelry categories include stunning engagement rings, delicate
+          charm bracelets and timeless mangalsutra, ensuring there's something
+          exquisite for every taste.
         </p>
       </div>
 
-      <footer class="footer">
-        <div class="grid-container">
-          <h2>My Jwels</h2>
-          <h3>Bring some happiness in your house with values.</h3>
-          <h3>Privacy Policy</h3>
-          <h3>Terms of Use</h3>
-          <h3>© 2023 My Jwels</h3>
-          <h3>About</h3>
-          <h4>Github</h4>
-          <h4>Twitter</h4>
-          <h4>LinkedIn</h4>
-          <h4>Instagram</h4>
+      <div className="category_container">
+        <div className="category_container-child">
+          <Link className="landing-link">
+            <p className="paragraph">
+              Exquisite and versatile, our collection of rings features
+              captivating designs crafted from premium materials
+            </p>
+            <h2> Ring </h2>
+          </Link>
         </div>
-      </footer>
+        <div className="category_container-child">
+          <Link className="landing-link">
+            <p className="paragraph">
+              Exquisite and versatile, our collection of rings features
+              captivating designs crafted from premium materials
+            </p>{" "}
+            <h2> Bracelets </h2>
+          </Link>
+        </div>
+        <div className="category_container-child">
+          <Link className="landing-link">
+            <p className="paragraph">
+              Exquisite and versatile, our collection of rings features
+              captivating designs crafted from premium materials
+            </p>{" "}
+            <h2> Mangalsutra </h2>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

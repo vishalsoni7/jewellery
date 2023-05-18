@@ -1,20 +1,54 @@
-.link {
-  color: whitesmoke;
+.landing-link {
   text-decoration: none;
+  color: #252525;
 }
-.img {
+.container {
+  padding: 40px 50px 0px 50px;
+}
+.landing-img {
+  background-size: cover;
+  background-position: center;
   width: 100%;
-  height: 400px;
-  object-fit: fill;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-.footer {
-  justify-content: flex-start;
+  height: 600px;
+  box-shadow: 0 26px 58px 0 rgba(0, 0, 0, 0.22),
+    0 5px 14px 0 rgba(0, 0, 0, 0.18);
 }
 
-.circle {
+.category_container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: center;
+
+  gap: 5rem;
+  padding-bottom: 5rem;
+}
+.category_container-child {
+  position: relative;
+  width: 350px;
+  height: 200px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12);
+}
+.category_container-child:hover {
+  box-sizing: border-box;
+  transition: 0.3s;
+  box-shadow: 0 26px 58px 0 rgba(0, 0, 0, 0.22),
+    0 5px 14px 0 rgba(0, 0, 0, 0.18);
+}
+.category-heading {
+  padding-top: 1rem;
+  font-size: xx-large;
+  font-weight: 500;
+  text-align: center;
+}
+.category-description {
+  font-size: large;
+  padding-bottom: 40px;
+}
+
+.paragraph {
+  margin: 2.5rem;
+  text-align: left;
+}
+h2 {
+  padding-left: 2.5rem;
+  text-align: left;
 }

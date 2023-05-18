@@ -8,6 +8,7 @@ import {
   faHeart,
   faCartShopping,
   faUser,
+  faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const Header = () => {
@@ -15,14 +16,13 @@ export const Header = () => {
     <div>
       <nav className="navBar">
         <Link to="/" className="link">
-          <h1> My Jwels </h1>
+          <h1 className="heading"> My Jwels </h1>
         </Link>
-
         <input
-          placeholder="  search for product"
+          placeholder="   search for product"
           className="search-bar"
           type="text"
-        />
+        />{" "}
         <Link className="link" to="/wishlist">
           <FontAwesomeIcon icon={faHeart} size="xl" />
         </Link>

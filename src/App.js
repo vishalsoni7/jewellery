@@ -8,6 +8,7 @@ import { WishList } from "./pages/wishlist/WishList";
 import { Cart } from "./pages/cart/Cart";
 import { CurrentProduct } from "./pages/currentProduct/CurrentProduct";
 import { Header } from "./component/Header";
+import { Footer } from "./component/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/product" element={<CurrentProduct />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

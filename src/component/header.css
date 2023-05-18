@@ -1,19 +1,22 @@
+.heading {
+  font-size: xx-large;
+  font-weight: 500;
+}
 .navBar {
   display: flex;
   align-items: baseline;
   justify-content: space-around;
   color: whitesmoke;
-  background-color: #f9629f;
   padding: 0.5rem;
-  box-sizing: border-box;
+  background-color: crimson;
 }
 h1 {
   text-align: left;
   font-size: x-large;
 }
 .search-bar {
-  margin: 10px 0px 10px 0px;
-  padding: 0px 20px 0px 20px;
+  margin: 10px 50px 10px 0px;
+  padding: 0px 50px 0px 20px;
   width: 400px;
   height: 20px;
   border: 1px solid #cccccc;
