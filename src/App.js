@@ -3,17 +3,18 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Landing } from "./landing/Landing";
 
+import { Nevigation } from "./component/Nevigation";
 import { Product } from "./pages/product/Product";
 import { WishList } from "./pages/wishlist/WishList";
 import { Cart } from "./pages/cart/Cart";
 import { CurrentProduct } from "./pages/currentProduct/CurrentProduct";
-import { Header } from "./component/Header";
+
 import { Footer } from "./component/Footer";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Nevigation />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/products" element={<Product />} />

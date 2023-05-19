@@ -36,16 +36,17 @@ export const Cart = () => {
         {" "}
         {mails.map((item) => (
           <div className="my-cart-card">
-            <img className="my-cart-img" src="./LR00055-6__1450266466.jpg" />
-            <h3>Item: {item.name}</h3>
-            <p>By: {item.by} </p>
-            <p> {item.price} ₹ </p>
-
-            <button> - </button>
-            <button> + </button>
-
-            <button>REMOVE</button>
-            <button>MOVE TO CART </button>
+            <li>
+              {" "}
+              <img className="my-cart-img" src="./LR00055-6__1450266466.jpg" />
+              <h3>Item: {item.name}</h3>
+              <p>By: {item.by} </p>
+              <p> {item.price} ₹ </p>
+              <button> - </button>
+              <button> + </button>
+              <button>REMOVE</button>
+              <button>MOVE TO CART </button>
+            </li>
           </div>
         ))}{" "}
       </div>

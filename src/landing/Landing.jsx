@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 
 import "../landing/landing.css";
 
+import { SlideShow } from "../component/SlideShow.jsx";
+
 export const Landing = () => {
   return (
     <div>
-      <div className="container">
-        <img className="landing-img" src="./landing_image.jpeg" />
+      <div>
+        <SlideShow />
       </div>
 
       <div>
@@ -19,7 +21,6 @@ export const Landing = () => {
           exquisite for every taste.
         </p>
       </div>
-
       <div className="category_container">
         <div className="category_container-child">
           <Link className="landing-link">
