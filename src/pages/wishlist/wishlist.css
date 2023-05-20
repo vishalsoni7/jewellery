@@ -1,7 +1,5 @@
 .wishlist-img {
   width: 100%;
-
-  /* border: 1px solid red; */
   object-fit: fill;
   border-radius: 0.5rem 0rem 0rem 0rem;
   border-right: 2px solid rgba(0, 0, 0, 0.1);
@@ -54,8 +52,6 @@
   font-size: 16px;
   font-weight: 400;
   min-height: 3rem;
-
-  /* padding: calc(0rem - 0px) calc(3rem - 0px); */
   transition: all 250ms;
   user-select: none;
   -webkit-user-select: none;

@@ -68,9 +68,9 @@ export const SlideShow = () => {
             <div
               style={{
                 ...divStyle,
-                objectFit: "cover",
+
                 background: `url(${image.url}) no-repeat center`,
-                backgroundSize: "35% auto",
+                backgroundSize: "38% auto",
               }}
             >
               {" "}
