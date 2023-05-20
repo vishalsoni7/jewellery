@@ -1,24 +1,39 @@
 .heading {
-  font-size: xx-large;
-  font-weight: 500;
+  font-weight: 600;
+  display: inline-block;
+  font-size: 30px;
+  transform: scale(1.3, 1.2);
 }
 .navBar {
+  height: 70px;
   display: flex;
-  align-items: baseline;
-  justify-content: space-around;
+  align-items: center;
   color: whitesmoke;
-  padding: 0.5rem;
+  padding-bottom: 0px;
   background-color: crimson;
+  padding-block: initial;
+}
+.div-A {
+  flex-grow: 0.5;
+}
+
+.div-B {
+  flex-grow: 1;
+}
+
+.div-C,
+.div-D,
+.div-E {
+  flex-grow: 0.5;
 }
 
 .search-bar {
-  margin: 10px 50px 10px 0px;
-  padding: 0px 50px 0px 20px;
-  width: 30rem;
-  height: 1.6rem;
+  width: 100%;
+  height: 1.7rem;
   border: 1px solid whitesmoke;
-  padding: 5px;
-  border-radius: 1rem;
+  border-radius: 1px;
+  font-size: medium;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .link {
   color: whitesmoke;

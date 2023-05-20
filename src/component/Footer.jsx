@@ -7,14 +7,14 @@ export const Footer = () => {
     <div>
       {" "}
       <footer>
-        <sectio>
+        <section>
           {" "}
-          <li>My Jwels</li>
+          <li>Jwels</li>
           <li>Bring some happiness in your house with values.</li>
           <li>Privacy Policy</li>
           <li>Terms of Use</li>
-          <li>© 2023 My Jwels</li>
-        </sectio>{" "}
+          <li>© 2023 Jwels</li>
+        </section>{" "}
         <section>
           <li>About</li>
           <li>Github</li>

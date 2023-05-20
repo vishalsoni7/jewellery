@@ -1,4 +1,4 @@
-.product-img {
+/* .product-img {
   width: 250px;
   height: 260px;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
@@ -34,4 +34,80 @@
 .heading {
   font-size: xx-large;
   font-weight: 700;
+} */
+
+.product-maiDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.product-card {
+  position: relative;
+  width: 13em;
+  height: 16.5em;
+  box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 120ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 0.5em;
+  padding-bottom: 3.4em;
+}
+
+.product-card::after {
+  content: "Add to Cart";
+  padding-top: 1em;
+  padding-left: 1.25em;
+  position: absolute;
+  left: 0;
+  bottom: -60px;
+  background: rgb(220, 20, 60);
+  color: #fff;
+  height: 2.5em;
+  width: 90%;
+  transition: all 80ms;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.product-card .title {
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 1.875em;
+  font-weight: 400;
+}
+
+.product-card .price {
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 0.625em;
+}
+
+.product-card:hover::after {
+  bottom: 0;
+  opacity: 1;
+}
+
+.product-card:active {
+  transform: scale(0.98);
+}
+
+.product-card:active::after {
+  content: "Added !";
+  height: 2em;
+}
+
+.product-image {
+  object-fit: cover;
+  background: rgb(241, 241, 241);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
 }

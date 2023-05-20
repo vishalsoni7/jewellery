@@ -1,3 +1,12 @@
+.landing-container {
+  border: 1px solid red;
+  position: relative;
+}
+
+.landing-mainDiv {
+  height: 100%;
+}
+
 .landing-link {
   text-decoration: none;
   color: #252525;
@@ -17,12 +26,11 @@
 .category_container {
   display: flex;
   justify-content: center;
-
+  flex-wrap: wrap;
   gap: 5rem;
   padding-bottom: 5rem;
 }
 .category_container-child {
-  position: relative;
   width: 350px;
   height: 200px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12);

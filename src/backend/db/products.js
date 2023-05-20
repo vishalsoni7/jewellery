@@ -4,7 +4,7 @@ export const products = [
   {
     id: 1,
     name: "Product Name",
-    by: "My Jwels",
+    by: "Jwels",
     category: "Ring",
     price: 9.99,
     weight: "500g",

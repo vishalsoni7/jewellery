@@ -22,7 +22,6 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/product" element={<CurrentProduct />} />
       </Routes>
-      <Footer />
     </div>
   );
 }

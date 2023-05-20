@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "react-slideshow-image";
+import { Fade, Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
 const images = [
@@ -56,7 +56,7 @@ const divStyle = {
   height: "550px",
 };
 
-const slideDuration = 750;
+const slideDuration = 1500;
 
 export const SlideShow = () => {
   return (
@@ -68,6 +68,7 @@ export const SlideShow = () => {
             <div
               style={{
                 ...divStyle,
+                objectFit: "cover",
                 background: `url(${image.url}) no-repeat center`,
                 backgroundSize: "35% auto",
               }}
