@@ -1,3 +1,8 @@
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .landing-container {
   position: relative;
 }
@@ -12,6 +17,8 @@
 }
 .container {
   padding: 40px 50px 0px 50px;
+  width: 100%;
+  overflow-x: hidden;
 }
 .landing-img {
   background-size: cover;

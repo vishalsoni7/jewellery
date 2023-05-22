@@ -38,7 +38,7 @@
   margin-top: 5px;
 }
 
-button {
+.cart-button {
   background-color: #ffffff;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -52,10 +52,10 @@ button {
   touch-action: manipulation;
 }
 
-button:hover {
+.cart-button:hover {
   transform: translateY(-1px);
 }
-button:active {
+.cart-button:active {
   background-color: #f0f0f1;
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;

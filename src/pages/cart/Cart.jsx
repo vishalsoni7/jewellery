@@ -2,39 +2,13 @@ import React from "react";
 
 import "../cart/cart.css";
 
-import { CartBill } from "./CartBill";
-
-export const mails = [
-  {
-    id: 1,
-    name: "Gold ring",
-    by: "Jwels",
-    category: "Ring",
-    price: 9.99,
-    weight: "500g",
-    metal: "Gold",
-    gst: 0.18,
-    img: "./LR00055-6__1450266466.jpg",
-  },
-
-  {
-    id: 1,
-    name: "Gold ring",
-    by: "Jwels",
-    category: "Ring",
-    price: 9.99,
-    weight: "500g",
-    metal: "Gold",
-    gst: 0.18,
-    img: "./LR00055-6__1450266466.jpg",
-  },
-];
+//import { CartBill } from "./CartBill";
 
 export const Cart = () => {
   return (
     <div>
-      <CartBill />
-      <div className="cart-mainDiv">
+      {/* <CartBill /> */}
+      {/* <div className="cart-mainDiv">
         <h1> My Cart</h1>
         {mails.map((item) => (
           <div className="cart-card">
@@ -50,9 +24,9 @@ export const Cart = () => {
               </div>
 
               <div>
-                <button className="count-button"> - </button>
+                <button> - </button>
                 counts
-                <button className="count-button"> + </button>
+                <button> + </button>
               </div>
 
               <div>
@@ -62,7 +36,7 @@ export const Cart = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

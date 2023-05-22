@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-
 export const products = [
   {
     id: 1,
@@ -115,7 +113,7 @@ export const products = [
   },
   {
     id: 9,
-    name: "The Induprabha Diamond Mangalsutra",
+    name: "Diamond Mangalsutra",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/m/MS00032-5_590.jpg",
     by: "Jwels",
@@ -129,7 +127,7 @@ export const products = [
   },
   {
     id: 10,
-    name: "The Thanu Diamond Mangalsutra with Chain",
+    name: "Diamond Mangalsutra with Chain",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/m/MS00568-5_577.jpg",
     by: "Jwels",
@@ -143,7 +141,7 @@ export const products = [
   },
   {
     id: 11,
-    name: "The Ragil Diamond Mangalsutra with Chain",
+    name: "Diamond Mangalsutra with Chain",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/m/MS00566-5_980.jpg",
     by: "Jwels",
