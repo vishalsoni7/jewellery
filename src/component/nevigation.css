@@ -1,0 +1,134 @@
+.heading {
+  font-weight: 600;
+  display: inline-block;
+  font-size: 30px;
+  transform: scale(1.3, 1.2);
+}
+.navBar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  color: whitesmoke;
+  background-color: #b21368;
+}
+.div-A {
+  flex-grow: 0.2;
+}
+
+.div-B {
+  flex-grow: 0.5;
+}
+
+.div-C,
+.div-D,
+.div-E {
+  flex-grow: 0.1;
+}
+
+.search-bar {
+  width: 100%;
+  height: 1.7rem;
+  border: 1px solid whitesmoke;
+  border-radius: 1px;
+  font-size: medium;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.link {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.link:hover {
+  transition: 0.2s;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
+    0 8px 16px rgba(0, 0, 0, 0.11);
+}
+.logo {
+  box-shadow: 0px 1px 5px 0px rgba(155, 155, 155, 1) inset;
+}
+/* * {
+  padding: 0px;
+  margin: 0px;
+}
+
+.navigation {
+  background-color: #c4eef2;
+  width: 100vw;
+  height: 16vh;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
+.childA,
+.childC,
+.childD,
+.childE {
+  flex: 15vw;
+}
+.childA {
+  background-color: #025159;
+}
+.childB {
+  background-color: #3f858c;
+  flex: 30vw;
+}
+.childC {
+  background-color: #025159;
+}
+.childD {
+  background-color: #3f858c;
+}
+
+.search-bar {
+  margin: 10px 50px 10px 0px;
+  width: 400px;
+  height: 20px;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  border-radius: 1rem;
+} */
+
+/* * {
+  padding: 0px;
+  margin: 0px;
+}
+
+.navigation {
+  background-color: #c4eef2;
+  width: 100vw;
+  height: 16vh;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
+.childA,
+.childC,
+.childD,
+.childE {
+  flex: 15vw;
+}
+.childA {
+  background-color: #025159;
+}
+.childB {
+  background-color: #3f858c;
+  flex: 30vw;
+}
+.childC {
+  background-color: #025159;
+}
+.childD {
+  background-color: #3f858c;
+}
+
+.search-bar {
+  margin: 10px 50px 10px 0px;
+  width: 400px;
+  height: 20px;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  border-radius: 1rem;
+} */

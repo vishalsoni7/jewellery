@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-
 /**
  * Category Database can be added here.
  * You can add category of your wish with different attributes
@@ -7,21 +5,21 @@ import { v4 as uuid } from "uuid";
 
 export const categories = [
   {
-    _id: uuid(),
-    categoryName: "fiction",
+    id: 1,
+    categoryName: "RINGS",
     description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+      "Exquisite and versatile, our collection of rings features captivating designs crafted from premium materials",
   },
   {
-    _id: uuid(),
-    categoryName: "non-fiction",
+    id: 2,
+    categoryName: "BRACELETS",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "Adorn your wrist with our captivating bracelet collection, featuring delicate chains, sparkling tennis bracelets.",
   },
   {
-    _id: uuid(),
-    categoryName: "horror",
+    id: 3,
+    categoryName: "MANGALSUTRA",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "Discover the timeless elegance of our Mangalsutra collection, showcasing intricately crafted designs.",
   },
 ];
