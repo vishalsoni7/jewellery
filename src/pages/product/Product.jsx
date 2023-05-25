@@ -2,34 +2,36 @@ import "../product/product.css";
 
 import React, { useContext } from "react";
 import { DataContext } from "../../Context/DataContext";
+import { NavLink } from "react-router-dom";
 import { Filters } from "./FiterSection";
-import { Link } from "react-router-dom";
 
 export const Product = () => {
-  const { isProduct } = useContext(DataContext);
+  const { singleProduct } = useContext(DataContext);
+  const {
+    state: { filterData },
+  } = useContext(DataContext);
+
   return (
     <div>
       <Filters />
 
       <div className="product-maiDiv">
-        {isProduct.map((item) => {
+        {filterData.map((item) => {
           const { name, price, img, id } = item;
 
           return (
             <div key={id} class="product-card">
               <div class="product-image">
-                <Link to={`/product/${id}`}>
-                  {" "}
+                <NavLink to="/product" onClick={() => singleProduct(id)}>
                   <img src={img} alt="product" />
-                </Link>
+                </NavLink>
               </div>
 
               <span class="title">{name}</span>
-              <span class="price"> {price} </span>
+              <span class="price">₹ {price} </span>
               <div>
-                {" "}
-                <button className="prod-button"> Add to cart </button>{" "}
-                <button className="prod-button"> Add to Wishlist </button>{" "}
+                <button className="prod-button"> Add to cart </button>
+                <button className="prod-button"> Add to Wishlist </button>
               </div>
             </div>
           );
@@ -58,7 +60,7 @@ export const Product = () => {
 
 {
   /* <div>
-{" "}
+
 <div className="product-maiDiv">
   {mails.map((item) => {
     const { name, price, img } = item;
@@ -73,14 +75,14 @@ export const Product = () => {
               height: "245px",
               width: "195px",
             }}
-          />{" "}
+          />
         </div>
         <span class="title">{name}</span>
         <span class="price"> {price} </span>
       </div>
     );
   })}
-</div>{" "}
+</div>
 <Footer />
 </div> */
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "react-slideshow-image";
+import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
 const images = [
@@ -50,9 +50,9 @@ const images = [
 ];
 
 const divStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+  // display: "flex",
+  // alignItems: "center",
+  // justifyContent: "center",
   height: "550px",
 };
 
@@ -61,14 +61,13 @@ const slideDuration = 1500;
 export const SlideShow = () => {
   return (
     <div className="slide-container" style={{ backgroundColor: "white" }}>
-      <Fade duration={slideDuration}>
+      <Slide duration={slideDuration}>
         {images.map((image, index) => (
           <div key={index}>
             {" "}
             <div
               style={{
                 ...divStyle,
-
                 background: `url(${image.url}) no-repeat center`,
                 backgroundSize: "39% auto",
               }}
@@ -77,7 +76,7 @@ export const SlideShow = () => {
             </div>{" "}
           </div>
         ))}
-      </Fade>
+      </Slide>
     </div>
   );
 };

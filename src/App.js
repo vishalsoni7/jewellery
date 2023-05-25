@@ -19,7 +19,7 @@ function App() {
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/" element={<Landing />} />
         <Route path="/products" element={<Product />} />
-        <Route path="/product/:productId" element={<CurrentProduct />} />
+        <Route path="/product" element={<CurrentProduct />} />
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/product" element={<CurrentProduct />} />

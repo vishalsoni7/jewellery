@@ -2,12 +2,12 @@ import React from "react";
 
 import "../cart/cart.css";
 
-//import { CartBill } from "./CartBill";
+import { CartBill } from "./CartBill";
 
 export const Cart = () => {
   return (
     <div>
-      {/* <CartBill /> */}
+      <CartBill />
       {/* <div className="cart-mainDiv">
         <h1> My Cart</h1>
         {mails.map((item) => (

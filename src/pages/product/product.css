@@ -1,8 +1,7 @@
 .product-maiDiv {
   display: flex;
-  padding-top: 5rem;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   margin-left: 20rem;
 }
 
@@ -28,7 +27,7 @@
   position: absolute;
   left: 0.625em;
   bottom: 1.875em;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .product-card .price {

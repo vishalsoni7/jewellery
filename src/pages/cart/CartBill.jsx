@@ -4,9 +4,9 @@ import "../cart/cartbill.css";
 
 export const CartBill = () => {
   return (
-    <div>
+    <div className="card_bill">
       {" "}
-      <ul>
+      <ul className="card_li">
         <li>
           <h1> Have Coupon ? </h1>
         </li>

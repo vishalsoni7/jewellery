@@ -1,35 +1,45 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
 
-import { createContext, useReducer } from "react";
-
+import { createContext, useReducer, useState, useEffect } from "react";
 import { DataReducer, initial_State } from "../Reducer/CategoryReducer";
-
 export const DataContext = createContext();
 
 export const Categories = ({ children }) => {
   const [state, dispatch] = useReducer(DataReducer, initial_State);
-  const [isCategory, setIsCategory] = useState([]);
-  const [isProduct, setIsProduct] = useState([]);
+  const [data, setData] = useState({});
+
+  const singleProduct = async (productId) => {
+    try {
+      const res = await fetch(`/api/products/${productId}`);
+      const { product } = await res.json();
+      setData(product);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
     (async () => {
       try {
         const response = await fetch("/api/categories");
         const { categories } = await response.json();
-        setIsCategory(categories);
+        dispatch({ type: "ALL_CATEGORIES", payload: categories });
 
         const dataResponse = await fetch("/api/products");
         const { products } = await dataResponse.json();
-        setIsProduct(products);
+        dispatch({ type: "ALL_PRODUCTS", payload: products });
       } catch (error) {
         console.log(error);
       }
     })();
   }, []);
 
-  const values = { state, dispatch, isCategory, isProduct };
+  const values = {
+    state,
+    dispatch,
+    singleProduct,
+    data,
+  };
   return (
     <DataContext.Provider value={values}> {children} </DataContext.Provider>
   );

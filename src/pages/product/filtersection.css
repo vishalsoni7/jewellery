@@ -1,12 +1,12 @@
 .filter-mainDiv {
-  margin-top: 4.5rem;
   display: flex;
   position: fixed;
   flex-direction: column;
-  width: 270px;
+  width: 250px;
   height: 100%;
-  grid-gap: 2rem;
-  gap: 2rem;
+  grid-gap: 1rem;
+  gap: 0.5rem;
+  line-height: 0px;
   text-align: left;
   font-size: large;
   padding: 1rem 2rem 80px;
@@ -25,7 +25,7 @@
 
 .filter-button:hover {
   transition: 5ms;
-  color: rgba(128, 128, 128, 0.84);
+  filter: blur(0.5px);
 }
 
 .filter-heading {

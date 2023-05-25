@@ -5,19 +5,19 @@
 
 export const categories = [
   {
-    id: 1,
+    _id: 1,
     categoryName: "RINGS",
     description:
       "Exquisite and versatile, our collection of rings features captivating designs crafted from premium materials",
   },
   {
-    id: 2,
+    _id: 2,
     categoryName: "BRACELETS",
     description:
       "Adorn your wrist with our captivating bracelet collection, featuring delicate chains, sparkling tennis bracelets.",
   },
   {
-    id: 3,
+    _id: 3,
     categoryName: "MANGALSUTRA",
     description:
       "Discover the timeless elegance of our Mangalsutra collection, showcasing intricately crafted designs.",
