@@ -1,26 +1,20 @@
 export const initial_State = {
   category: [],
-  productData: [],
-  filterData: [],
-  sortRatings: "",
+  productData: [], // og Data
+  filterData: [], // copy data
+  serachedData: "",
+  sortRatings: 5,
   clickedCategory: "",
-  ringCategory: false,
-  braceletCategory: false,
-  mangalsutraCategory: false,
-  maxRating: 0,
-  rating: 0,
-  minRating: 1,
+  sortByPrice: "",
 };
 
 export const DataReducer = (state, action) => {
   switch (action.type) {
     case "ALL_PRODUCTS": {
-      let filterRatings = action.payload.map((item) => item.rating);
       return {
         ...state,
         productData: action.payload,
         filterData: action.payload,
-        maxRating: Math.max(...filterRatings),
       };
     }
     case "ALL_CATEGORIES": {
@@ -29,17 +23,19 @@ export const DataReducer = (state, action) => {
         category: action.payload,
       };
     }
-    case "SEARCHEDDATA": {
+    case "SEARCHED_DATA": {
       return {
         ...state,
+        serachedData: action.payload,
         filterData: state.productData.filter((item) =>
           item.name.toLowerCase().includes(action.payload.toLowerCase())
         ),
       };
     }
-    case "SORTBYPRICE": {
+    case "SORT_BY_PRICE": {
       return {
         ...state,
+        sortByPrice: action.payload,
         filterData: [...state.filterData].sort((a, b) =>
           action.payload === "lowToHigh" ? a.price - b.price : b.price - a.price
         ),
@@ -49,24 +45,29 @@ export const DataReducer = (state, action) => {
       return {
         ...state,
         clickedCategory: action.payload,
-        filterData: [...state.productData].filter(
-          ({ category }) => category === state.clickedCategory
+        filterData: [...state.filterData].filter(
+          ({ category }) => category === action.payload
         ),
-      };
-    }
-    case "CLEAR": {
-      return {
-        ...state,
-        filterData: state.productData,
       };
     }
     case "FILTER_BY_RATING": {
       return {
         ...state,
-        rating: action.payload,
+        sortRatings: action.payload,
         filterData: [...state.productData].filter(
-          ({ rating }) => rating === action.payload
+          ({ rating }) => rating <= action.payload
         ),
+      };
+    }
+
+    case "CLEAR": {
+      return {
+        ...state,
+        filterData: state.productData,
+        serachedData: state.productData,
+        sortRatings: 3,
+        clickedCategory: state.productData,
+        sortByPrice: state.productData,
       };
     }
     default: {

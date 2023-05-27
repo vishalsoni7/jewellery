@@ -1,59 +1,78 @@
 import React from "react";
-import { Footer } from "../../component/Footer";
-
 import "../wishlist/wishlist.css";
 
 export const mails = [
   {
-    id: 1,
-    name: "Gold ring",
+    _id: 1,
+    name: "The Naveah Diamond Ring",
+    img:
+      "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/l/LR00055-6__1450266466.jpg",
     by: "Jwels",
     category: "Ring",
-    price: 9.99,
-    weight: "500g",
-    metal: "Gold",
-    gst: 0.18,
-    img: "./LR00055-6__1450266466.jpg",
+    price: 10246,
+    weight: "0.84 g",
+    metal: "Yellow Gold",
+    GST: "3 %",
+    size: 7,
+    rating: 5,
   },
   {
-    id: 1,
-    name: "Gold ring",
+    _id: 2,
+    name: "The Blink Diamond Ring",
+    img:
+      "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/l/LR02646-6_513.jpg",
     by: "Jwels",
     category: "Ring",
-    price: 9.99,
-    weight: "500g",
-    metal: "Gold",
-    gst: 0.18,
-    img: "./LR00055-6__1450266466.jpg",
+    price: 29089,
+    weight: "2.53 g",
+    metal: "Yellow Gold",
+    GST: "3 %",
+    size: 7.5,
+    rating: 4,
+  },
+  {
+    _id: 2,
+    name: "The Blink Diamond Ring",
+    img:
+      "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/l/LR02646-6_513.jpg",
+    by: "Jwels",
+    category: "Ring",
+    price: 29089,
+    weight: "2.53 g",
+    metal: "Yellow Gold",
+    GST: "3 %",
+    size: 7.5,
+    rating: 4,
   },
 ];
 
 export const WishList = () => {
   return (
     <div>
-      <div className="mainDiv">
-        <h1> My wish list </h1>
-        {mails.map((item) => (
-          <div className="card">
-            <div className="cart-div">
-              <img
-                className="wishlist-img"
-                src="./LR00055-6__1450266466.jpg"
-                alt="img"
-              />
-            </div>
-            <div className="wishlist-data">
-              <p className="wishlist-h2"> {item.name} </p>
-              <p> By: {item.by} </p>
-              <p> Price: {item.price} ₹</p>
-              <p> {item.category} </p>
+      <div className="wishlist-mainDiv">
+        <h2>
+          {" "}
+          My wish list <sup> {`(${mails.length})`} </sup>{" "}
+        </h2>
+        {mails.map((item) => {
+          const { _id, name, img, by, price, weight, rating } = item;
+          return (
+            <div key={_id} className="wishlist-card">
+              <img className="wishlist-img" src={img} alt="products" />
 
-              <button className="wishlist-button"> Move to Cart </button>
+              <div>
+                <h2> {name} </h2>
+                <p className="wishlist-p"> By: {by} </p>
+                <p> Rating : {rating} </p>
+                <p> Price: {price} ₹</p>
+                <p> Weight: {weight} </p>
+                <button className="wishlist-btn"> Move to Cart </button>
+                <button className="remove-wishlist-btn">Remove</button>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
-      <Footer />
     </div>
   );
 };

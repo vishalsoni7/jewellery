@@ -2,11 +2,10 @@
   display: flex;
   position: fixed;
   flex-direction: column;
-  width: 250px;
+  width: 16rem;
   height: 100%;
   grid-gap: 1rem;
-  gap: 0.5rem;
-  line-height: 0px;
+  gap: 1rem;
   text-align: left;
   font-size: large;
   padding: 1rem 2rem 80px;
@@ -25,7 +24,8 @@
 
 .filter-button:hover {
   transition: 5ms;
-  filter: blur(0.5px);
+  filter: blur(0.25px);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.832);
 }
 
 .filter-heading {
@@ -48,7 +48,6 @@
 }
 
 .filter-checkbox {
-  float: left;
   padding-top: 1rem;
   display: flex;
   align-items: flex-start;

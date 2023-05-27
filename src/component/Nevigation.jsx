@@ -28,7 +28,7 @@ export const Nevigation = () => {
         <div className="div-B">
           <input
             onChange={(e) =>
-              dispatch({ type: "SEARCHEDDATA", payload: e.target.value })
+              dispatch({ type: "SEARCHED_DATA", payload: e.target.value })
             }
             placeholder=" 🔍 search for product"
             className="search-bar"
@@ -49,7 +49,7 @@ export const Nevigation = () => {
         </div>
 
         <div className="div-E">
-          <NavLink className="link" to="/user">
+          <NavLink className="link" to="/signin">
             <FontAwesomeIcon icon={faUser} size="xl" />
           </NavLink>
         </div>

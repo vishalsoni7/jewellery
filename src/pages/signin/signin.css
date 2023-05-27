@@ -1,0 +1,78 @@
+.signin_mainDiv {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.signin-form {
+  margin: 5rem 30rem;
+  background-color: #fff;
+  display: block;
+  padding: 1rem;
+  max-width: 350px;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.signin-form-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: #252525;
+}
+
+.signin-input-container {
+  position: relative;
+}
+
+.signin-input-container input {
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.signin-input-container input,
+.signin-form button {
+  outline: none;
+  border: 1px solid #e5e7eb;
+
+  margin: 8px 0;
+}
+
+.signin-nput-container input {
+  background-color: #fff;
+
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 300px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.signin-submit {
+  display: block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #b21368;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.signin-link {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.signin-link NavLink {
+  text-decoration: underline;
+}

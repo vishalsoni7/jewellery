@@ -9,6 +9,9 @@ import { Product } from "./pages/product/Product";
 import { WishList } from "./pages/wishlist/WishList";
 import { Cart } from "./pages/cart/Cart";
 import { CurrentProduct } from "./pages/currentProduct/CurrentProduct";
+import { SignIn } from "./pages/signin/SignIn";
+import { SignUp } from "./pages/signup/SignUp";
+import { Error } from "./pages/Error/Error";
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/product" element={<CurrentProduct />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );

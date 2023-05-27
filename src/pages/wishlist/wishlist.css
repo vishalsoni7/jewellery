@@ -1,63 +1,75 @@
 .wishlist-img {
-  border-radius: 0.5rem 0rem 0rem 0rem;
-  border-right: 2px solid rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  height: 220px;
+  width: 200px;
+  border-radius: 3px;
 }
 
-.mainDiv {
+.wishlist-mainDiv {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: left;
 }
-.card {
-  height: 250px;
-  overflow: hidden;
-  background-image: 100% auto;
+
+.wishlist-card {
   display: flex;
+  width: 30rem;
+  padding: 10px;
+  border-top: 1px solid #a0a0a0;
+  border-bottom: 1px solid #a0a0a0;
+  gap: 1rem;
+  margin: 1rem;
+  line-height: 2rem;
+}
 
-  align-items: center;
-  width: 35rem;
-  gap: 0.5rem;
-  margin: 20px;
+.wishlist-card:hover {
+  transition: 1s;
+  border-top: 1px solid #b21368e0;
+  border-bottom: 1px solid #b21368e0;
+}
 
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+.wishlist-card h2 {
+  font-size: x-large;
+}
+
+.wishlist-p {
+  color: gray;
 }
 
 .wishlist-data {
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  width: 400px;
+  align-items: center;
 }
 
-.wishlist-h2 {
-  font-size: x-large;
+.wishlist-btn {
+  color: whitesmoke;
+  background-color: #b21368;
+  border-radius: 3px;
+  border: none;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 50%;
+  cursor: pointer;
 }
 
-.card:hover {
-  transition: 0.5s;
-  box-shadow: 0px 4px 10px rgba(221, 131, 149, 0.534);
-}
-.wishlist-button {
-  margin-right: 8px;
-  margin-top: 2rem;
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  font-size: 16px;
-  font-weight: 400;
-  min-height: 3rem;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+.wishlist-btn:active {
+  color: #252525;
+  transition: 0.2s;
+  background-color: whitesmoke;
+  border: 0.5px solid #b21368;
 }
 
-.wishlist-button:active {
-  background-color: #f0f0f1;
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-  transform: translateY(0);
+.remove-wishlist-btn {
+  background: none;
+  border: none;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 50%;
+  cursor: pointer;
+}
+
+.remove-wishlist-btn:active {
+  font-size: small;
 }

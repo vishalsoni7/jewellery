@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import { DataContext } from "../../Context/DataContext";
 
@@ -6,7 +6,12 @@ import "../product/filtersection.css";
 
 export const Filters = () => {
   const {
-    state: { productData, clickedCategory, maxRating, rating, minRating },
+    state: {
+      productData,
+      clickedCategory,
+
+      sortRatings,
+    },
     dispatch,
   } = useContext(DataContext);
 
@@ -14,9 +19,7 @@ export const Filters = () => {
     (acc, { category }) => (acc.includes(category) ? acc : [...acc, category]),
     []
   );
-
-  console.log(productData, clickedCategory, maxRating, rating, minRating);
-
+  console.log(sortRatings);
   return (
     <div className="filter-mainDiv">
       <div className="filter-heading">
@@ -30,7 +33,7 @@ export const Filters = () => {
       </div>
 
       <div>
-        <h4> Ratings {rating} </h4>
+        <h4> Ratings </h4>
         <div className="filter-price">
           <p> 1 ★ </p> <p> 2 ★ </p> <p> 3 ★ </p> <p> 4 ★ </p> <p> 5 ★ </p>
         </div>
@@ -38,9 +41,9 @@ export const Filters = () => {
           className="filter-range"
           type="range"
           name="rating"
-          min={minRating}
-          max={maxRating}
-          value={rating}
+          min="1"
+          max="5"
+          value={sortRatings} //maxRating now - 5
           onChange={(e) =>
             dispatch({ type: "FILTER_BY_RATING", payload: e.target.value })
           }
@@ -60,7 +63,7 @@ export const Filters = () => {
                 }
                 type="checkbox"
               />
-              {cat}
+              {""} {cat}
             </div>
           ))}
         </div>
@@ -73,8 +76,8 @@ export const Filters = () => {
           {" "}
           <label>
             <input
-              onClick={() =>
-                dispatch({ type: "SORTBYPRICE", payload: "highToLow" })
+              onChange={() =>
+                dispatch({ type: "SORT_BY_PRICE", payload: "highToLow" })
               }
               type="radio"
               name="sort"
@@ -83,8 +86,8 @@ export const Filters = () => {
           </label>
           <label>
             <input
-              onClick={() =>
-                dispatch({ type: "SORTBYPRICE", payload: "lowToHigh" })
+              onChange={() =>
+                dispatch({ type: "SORT_BY_PRICE", payload: "lowToHigh" })
               }
               type="radio"
               name="sort"

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import "../component/footer.css";
 
@@ -15,13 +16,39 @@ export const Footer = () => {
         </section>
         <section>
           <li>About</li>
-          <li>Github</li>
-          <li>Twitter</li>
-          <li>LinkedIn</li>
-          <li>Instagram</li>
+          <NavLink className="footer-link" to="https://github.com/vishalsoni7">
+            {" "}
+            <li>Github</li>{" "}
+          </NavLink>
+          <NavLink className="footer-link" to="https://twitter.com/Vishsoni7">
+            {" "}
+            <li>Twitter</li>
+          </NavLink>
+          <NavLink
+            className="footer-link"
+            to="https://www.linkedin.com/in/vishal-soni-b21a4a1b8/"
+          >
+            {" "}
+            <li>LinkedIn</li>
+          </NavLink>
+          <NavLink
+            className="footer-link"
+            to="https://www.instagram.com/vishaallsoni/"
+          >
+            {" "}
+            <li>Instagram</li>
+          </NavLink>
         </section>
         <section>
-          <li>Sign Up</li> <li>Log In</li>
+          <NavLink className="footer-link" to="/signup">
+            {" "}
+            <li>Sign Up</li>
+          </NavLink>
+
+          <NavLink className="footer-link" to="/signin">
+            {" "}
+            <li>Sign In</li>
+          </NavLink>
         </section>
       </footer>
     </div>
