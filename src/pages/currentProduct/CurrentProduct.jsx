@@ -10,33 +10,31 @@ export const CurrentProduct = () => {
   return (
     <div>
       {" "}
-      <div className="currentCart_main_div">
-        <div className="current-product-card">
-          <img src={data.img} alt="product" />
+      <div className="current-mainDiv">
+        <div className="current-card">
+          <img className="current-img" src={data.img} alt="product" />
 
-          <h2> {data.name} </h2>
-
-          <ul className="currentProd_li">
+          <div className="current-content">
             {" "}
-            <li> M.R.P : {data.price}</li>
-            <li> Weight : {data.weight} </li>
-            <li> Metal : {data.metal} </li>
-            <li>GST : {data.GST} </li>
-            <li> Size : {data.size} </li>
-            <li> Ratings : {data.rating} </li>
-          </ul>
-
-          <button className="current-button">Add to Cart</button>
-          <button className="current-button"> Add to Wishlist </button>
+            <h1> {data.name} </h1>
+            <p className="current-card-p">By : {data.by} </p>
+            <p> Weight : {data.weight} </p>
+            <p> Metal : {data.metal} </p>
+            <p>GST : {data.GST} </p>
+            <p> Size : {data.size} </p>
+            <p> Rating : {data.rating} </p>
+            <h2> M.R.P : {data.price} ₹</h2>
+            <div className="current-btn-div">
+              {" "}
+              <button className="current-addtocart-btn">Add to Cart</button>
+              <button className="current-wishlist-btn">
+                {" "}
+                Add to Wishlist{" "}
+              </button>{" "}
+            </div>
+          </div>
         </div>
       </div>{" "}
     </div>
   );
 };
-
-// style={{
-//   marginTop: "5rem",
-//   display: "flex",
-//   alignContent: "center",
-//   justifyContent: "space-around",
-// }}

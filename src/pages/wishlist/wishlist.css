@@ -8,8 +8,10 @@
 .wishlist-mainDiv {
   margin-top: 2rem;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   text-align: left;
 }
 
@@ -25,7 +27,7 @@
 }
 
 .wishlist-card:hover {
-  transition: 1s;
+  transition: 0.3s;
   border-top: 1px solid #b21368e0;
   border-bottom: 1px solid #b21368e0;
 }
@@ -72,4 +74,5 @@
 
 .remove-wishlist-btn:active {
   font-size: small;
+  color: red;
 }
