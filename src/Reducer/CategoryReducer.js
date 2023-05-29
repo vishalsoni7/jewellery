@@ -1,10 +1,14 @@
 export const initial_State = {
   category: [],
-  productData: [], // og Data
+  productData: [], // OG Data
   filterData: [], // copy data
   serachedData: "",
   sortRatings: 5,
-  clickedCategory: "",
+  clickedCategory: {
+    RINGS: false,
+    BRACELETS: false,
+    MANGALSUTRAS: false,
+  },
   sortByPrice: "",
 };
 
@@ -27,26 +31,8 @@ export const DataReducer = (state, action) => {
       return {
         ...state,
         serachedData: action.payload,
-        filterData: state.productData.filter((item) =>
+        filterData: [...state.productData].filter((item) =>
           item.name.toLowerCase().includes(action.payload.toLowerCase())
-        ),
-      };
-    }
-    case "SORT_BY_PRICE": {
-      return {
-        ...state,
-        sortByPrice: action.payload,
-        filterData: [...state.filterData].sort((a, b) =>
-          action.payload === "lowToHigh" ? a.price - b.price : b.price - a.price
-        ),
-      };
-    }
-    case "FILTER_CATEGORY": {
-      return {
-        ...state,
-        clickedCategory: action.payload,
-        filterData: [...state.filterData].filter(
-          ({ category }) => category === action.payload
         ),
       };
     }
@@ -59,15 +45,44 @@ export const DataReducer = (state, action) => {
         ),
       };
     }
-
+    case "FILTER_RINGS": {
+      return {
+        ...state,
+        clickedCategory: action.payload,
+        filterData: [...state.productData].filter(({ category }) => category),
+      };
+    }
+    case "FILTER_BRACELETS": {
+      return {
+        ...state,
+        clickedCategory: action.payload,
+        filterData: [...state.productData].filter(({ category }) => category),
+      };
+    }
+    case "FILTER_MANGALSUTRAS": {
+      return {
+        ...state,
+        clickedCategory: action.payload,
+        filterData: [...state.productData].filter(({ category }) => category),
+      };
+    }
+    case "SORT_BY_PRICE": {
+      return {
+        ...state,
+        sortByPrice: action.payload,
+        filterData: [...state.filterData].sort((a, b) =>
+          action.payload === "lowToHigh" ? a.price - b.price : b.price - a.price
+        ),
+      };
+    }
     case "CLEAR": {
       return {
         ...state,
         filterData: state.productData,
-        serachedData: state.productData,
+        serachedData: "",
         sortRatings: 3,
-        clickedCategory: state.productData,
-        sortByPrice: state.productData,
+        clickedCategory: "",
+        sortByPrice: "",
       };
     }
     default: {

@@ -5,6 +5,7 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import { Categories } from "./Context/DataContext";
+
 // Call make Server
 makeServer();
 

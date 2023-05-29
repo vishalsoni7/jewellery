@@ -1,25 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { useContext } from "react";
 import { DataContext } from "../../Context/DataContext";
 
 import "../product/filtersection.css";
 
 export const Filters = () => {
-  const {
-    state: {
-      productData,
-      clickedCategory,
-
-      sortRatings,
-    },
+  let {
+    state: { clickedCategory, sortRatings },
     dispatch,
   } = useContext(DataContext);
 
-  const categoriesArray = productData.reduce(
-    (acc, { category }) => (acc.includes(category) ? acc : [...acc, category]),
-    []
-  );
-  console.log(sortRatings);
+  console.log(clickedCategory);
+
   return (
     <div className="filter-mainDiv">
       <div className="filter-heading">
@@ -43,7 +35,7 @@ export const Filters = () => {
           name="rating"
           min="1"
           max="5"
-          value={sortRatings} //maxRating now - 5
+          value={sortRatings}
           onChange={(e) =>
             dispatch({ type: "FILTER_BY_RATING", payload: e.target.value })
           }
@@ -51,29 +43,38 @@ export const Filters = () => {
         />
       </div>
 
-      <div>
-        <h4>Category</h4>
-        <div className="filter-checkbox">
-          {categoriesArray.map((cat) => (
-            <div>
-              <input
-                checked={clickedCategory.includes(cat)}
-                onChange={() =>
-                  dispatch({ type: "FILTER_CATEGORY", payload: cat })
-                }
-                type="checkbox"
-              />
-              {""} {cat}
-            </div>
-          ))}
-        </div>
+      <div className="filter-checkbox">
+        <h4>Categories</h4>
+        <input
+          type="checkbox"
+          checked={clickedCategory.RINGS}
+          onChange={(e) =>
+            dispatch({ type: "FILTER_RINGS", payload: e.target.checked })
+          }
+        />
+        Rings
+        <input
+          type="checkbox"
+          checked={clickedCategory.BRACELETS}
+          onChange={(e) =>
+            dispatch({ type: "FILTER_BRACELETS", payload: e.target.checked })
+          }
+        />{" "}
+        Baracelets
+        <input
+          type="checkbox"
+          checked={clickedCategory.MANGALSUTRAS}
+          onChange={(e) =>
+            dispatch({ type: "FILTER_MANGALSUTRAS", payload: e.target.checked })
+          }
+        />{" "}
+        Mangalsutra
       </div>
 
       <div>
         <h4> Sort By </h4>
 
-        <div className="filter-checkbox">
-          {" "}
+        <div className="filter-sorting">
           <label>
             <input
               onChange={() =>
@@ -99,3 +100,60 @@ export const Filters = () => {
     </div>
   );
 };
+
+// const categoriesArray = productData.reduce(
+//   (acc, { category }) => (acc.includes(category) ? acc : [...acc, category]),
+//   []
+// );
+
+// const [ring, setRing] = useState(false);
+// const [bracelet, setBracelet] = useState(false);
+// const [mangalsutra, setMangalsutra] = useState(false);
+
+// if (ring) {
+//   filterData = filterData.filter(({ Ring }) => Ring);
+// }
+
+// if (bracelet) {
+//   filterData = filterData.filter(({ Bracelet }) => Bracelet);
+// }
+
+// if (mangalsutra) {
+//   filterData = filterData.filter(({ Mangalsutra }) => Mangalsutra);
+// }
+
+// const handleRing = () => {
+//   setRing((pre) => !pre);
+// };
+
+// const handleBracelet = () => {
+//   setBracelet((pre) => !pre);
+// };
+
+// const handleMangalsutra = () => {
+//   setMangalsutra((pre) => !pre);
+// };
+
+/* <div>
+        <h4>Category</h4>
+        <div className="filter-checkbox">
+          <input onChange={handleRing} type="checkbox" /> Rings
+          <input onChange={handleBracelet} type="checkbox" /> Bracelets
+          <input onChange={handleMangalsutra} type="checkbox" /> Mangalsutra
+        </div>
+
+        <div className="filter-checkbox">
+          {categoriesArray.map((cat) => (
+            <div>
+              <input
+                checked={clickedCategory.RINGS}
+                onChange={() =>
+                  dispatch({ type: cat.categoryName, payload: cat })
+                }
+                type="checkbox"
+              />
+              {""} {cat}
+            </div>
+          ))}
+        </div>
+      </div> */

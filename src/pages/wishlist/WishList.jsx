@@ -16,34 +16,6 @@ export const mails = [
     size: 7,
     rating: 5,
   },
-  {
-    _id: 2,
-    name: "The Blink Diamond Ring",
-    img:
-      "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/l/LR02646-6_513.jpg",
-    by: "Jwels",
-    category: "Ring",
-    price: 29089,
-    weight: "2.53 g",
-    metal: "Yellow Gold",
-    GST: "3 %",
-    size: 7.5,
-    rating: 4,
-  },
-  {
-    _id: 2,
-    name: "The Blink Diamond Ring",
-    img:
-      "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/l/LR02646-6_513.jpg",
-    by: "Jwels",
-    category: "Ring",
-    price: 29089,
-    weight: "2.53 g",
-    metal: "Yellow Gold",
-    GST: "3 %",
-    size: 7.5,
-    rating: 4,
-  },
 ];
 
 export const WishList = () => {

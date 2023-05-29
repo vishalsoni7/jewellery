@@ -1,170 +1,68 @@
-.product-maiDiv {
+.products-maiDiv {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin-left: 20rem;
 }
 
-.product-card {
-  margin: 1rem;
-  position: relative;
-  width: 13em;
-  height: 16.5em;
-  box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 120ms;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: #fff;
-  padding: 0.5em;
-  padding-bottom: 5em;
-}
-
-.product-card .title {
-  font-size: 0.9em;
-  position: absolute;
-  left: 0.625em;
-  bottom: 1.875em;
-  font-weight: 500;
-}
-
-.product-card .price {
-  font-size: 0.9em;
-  position: absolute;
-  left: 0.625em;
-  bottom: 0.625em;
-}
-
-.product-card:active {
-  transform: scale(0.98);
-}
-
-.product-image {
-  object-fit: cover;
-  background: rgb(241, 241, 241);
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-}
-
-img {
-  height: 245px;
-  width: 195px;
-}
-
-/* .product-card {
-  margin: 1rem;
-  position: relative;
-  width: 13em;
-  height: 16.5em;
-  box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 120ms;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  padding: 0.5em;
-  padding-bottom: 5em;
-}
-
-.product-card::after {
-  content: "Add to Cart";
-  padding-top: 1em;
-  padding-left: 1.25em;
-  position: absolute;
-  left: 0;
-  bottom: -60px;
-  background: #b21368;
-  color: whitesmoke;
-  height: 2.5em;
-  width: 90%;
-  transition: all 80ms;
-  font-weight: 600;
-  text-transform: uppercase;
-  opacity: 0;
-}
-
-.product-card .title {
-  font-size: 0.9em;
-  position: absolute;
-  left: 0.625em;
-  bottom: 1.875em;
-  font-weight: 400;
-}
-
-.product-card .price {
-  font-size: 0.9em;
-  position: absolute;
-  left: 0.625em;
-  bottom: 0.625em;
-}
-
-.product-card:hover::after {
-  bottom: 0;
-  opacity: 1;
-}
-
-.product-card:active {
-  transform: scale(0.98);
-}
-
-.product-card:active::after {
-  content: "Added !";
-  height: 2em;
-}
-
-.product-image {
-  object-fit: cover;
-  background: rgb(241, 241, 241);
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-}
-
-img {
-  height: 245px;
-  width: 195px;
-} */
-
-/* .product-img {
-  width: 250px;
-  height: 260px;
-  border-radius: 0.5rem 0.5rem 0rem 0rem;
-}
-
-.product-cardLayout {
+.products-cart {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 10px;
+  flex-direction: column;
+  box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  width: 15rem;
+  border-radius: 8px;
 }
 
-.product-card {
-  border: 1px solid #d3d3d3;
-  border-radius: 0.5rem;
-  width: 250px;
-  height: 450px;
-}
-.product-card:hover {
-  box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
-    25px 0 20px -20px rgba(0, 0, 0, 0.45),
-    0px 25px 20px -20px rgba(0, 0, 0, 0.45),
-    -25px 0 20px -20px rgba(0, 0, 0, 0.45);
+.products-cart:hover {
+  transition: 0.1s;
+  transform: scale(0.98);
 }
 
-.card-button {
-  width: 80%;
-  padding: 8px;
-  border-radius: 4px;
-  margin: 5px;
+.products-img {
+  object-fit: fill;
+  width: 100%;
+  height: 250px;
+  border-radius: 8px 8px 0px 0px;
+  border-bottom: 1px solid gainsboro;
 }
-.heading {
-  font-size: xx-large;
-  font-weight: 700;
-} */
+
+.products-cart p {
+  margin-top: 0.5rem;
+  text-align: left;
+  padding-left: 0.6em;
+}
+
+.products-cart-weight {
+  font-size: smaller;
+  color: gray;
+}
+
+.btn-div {
+  margin-top: 1.3rem;
+  width: 100%;
+}
+
+.products-cart-button1 {
+  padding: 0.69rem;
+  width: 50%;
+  border: none;
+  background-color: #b21368;
+  color: whitesmoke;
+  border-radius: 0px 0px 0px 8px;
+}
+
+.products-cart-button2 {
+  padding: 0.69rem;
+  width: 50%;
+  border: none;
+  background-color: #b21368;
+  color: whitesmoke;
+  border-radius: 0px 0px 8px 0px;
+}
+
+.products-cart button:active {
+  transform: scale(0.98);
+  background-color: #b21368e0;
+}

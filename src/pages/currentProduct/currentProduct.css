@@ -3,8 +3,14 @@
   height: 80%;
   width: auto;
   border-radius: 5px;
+  transition: transform 0.5s, filter 1s ease-in-out;
 }
-
+.img-container {
+  overflow: hidden;
+}
+.img-container:hover img {
+  transform: scale(1.2);
+}
 .current-mainDiv {
   margin-top: 2rem;
   display: flex;
@@ -14,9 +20,7 @@
   justify-content: center;
   text-align: left;
 }
-
 .current-card {
-  height: 35rem;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -32,57 +36,52 @@
   width: 30rem;
   height: 35rem;
 }
-
 .current-card h2 {
   font-size: x-large;
 }
-
 .current-card p {
   font-size: large;
 }
-
 .current-card-p {
   color: gray;
 }
-
-.current-btn-div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
 .current-addtocart-btn {
   color: whitesmoke;
   background-color: #b21368;
   border-radius: 3px;
-  border: none;
-  margin-top: 1rem;
+  border: 1px solid #b21368;
+  margin-top: 2rem;
   padding: 0.5rem;
   width: 50%;
   cursor: pointer;
+  font-weight: 600;
 }
-
 .current-addtocart-btn:active {
   color: #252525;
   transition: 0.2s;
   background-color: whitesmoke;
-  border: 0.5px solid #b21368;
 }
-
 .current-wishlist-btn {
-  border: 1.2px solid #b21368;
+  border: 1px solid #b21368;
   border-radius: 3px;
   background: none;
   margin-top: 1rem;
-  padding: 0.5rem;
+  padding: 0.45rem;
   width: 50%;
   cursor: pointer;
+  font-weight: 600;
 }
-
 .current-wishlist-btn:active {
   color: whitesmoke;
   transition: 0.2s;
   background-color: #b21368;
+}
+.current-offer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.current-offer p {
+  font-size: medium;
+  color: #069848;
 }

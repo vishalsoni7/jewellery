@@ -32,6 +32,7 @@
 }
 
 .cart_bill_button {
+  display: inline-block;
   padding: 0.6rem;
   background-color: #18a558;
   color: whitesmoke;
@@ -40,8 +41,7 @@
   font-size: medium;
 }
 
-.cart_bill_button:hover {
+.cart_bill_button:active {
   transition: 0.3s;
-
   box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.3);
 }

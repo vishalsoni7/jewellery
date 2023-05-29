@@ -18,13 +18,10 @@ html {
   text-decoration: none;
   color: #252525;
 }
-/* .container {
-  padding: 0px 50px 0px 50px;
-} */
 
 .category_container {
   display: flex;
-  gap: 5rem;
+  gap: 2rem;
   padding-bottom: 3rem;
 }
 .category_container-child {

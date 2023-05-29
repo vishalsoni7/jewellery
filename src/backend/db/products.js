@@ -12,6 +12,9 @@ export const products = [
     GST: "3 %",
     size: 7,
     rating: 5,
+    certification: "Certified Diamonds",
+    mark: "Bis Hallmark",
+    shipping: "Insured Shipping",
   },
   {
     _id: 2,
@@ -26,6 +29,9 @@ export const products = [
     GST: "3 %",
     size: 7.5,
     rating: 4,
+    certification: "Certified Diamonds",
+    mark: "Bis Hallmark",
+    shipping: "Insured Shipping",
   },
   {
     _id: 3,
@@ -40,6 +46,9 @@ export const products = [
     GST: "3 %",
     size: 2.5,
     rating: 4,
+    certification: "Certified Diamonds",
+    mark: "Bis Hallmark",
+    shipping: "Insured Shipping",
   },
   {
     _id: 4,
@@ -54,6 +63,9 @@ export const products = [
     GST: "3 %",
     size: 8,
     rating: 3,
+    certification: "Certified Diamonds",
+    mark: "Bis Hallmark",
+    shipping: "Insured Shipping",
   },
   {
     _id: 5,
@@ -68,6 +80,8 @@ export const products = [
     GST: "3 %",
     size: 2,
     rating: 3,
+    mark: "Bis Hallmark",
+    shipping: "Insured Shipping",
   },
   {
     _id: 6,
@@ -82,6 +96,8 @@ export const products = [
     GST: "3 %",
     size: "",
     rating: 5,
+    mark: "Bis Hallmark",
+    shipping: "Insured Shipping",
   },
   {
     _id: 7,
@@ -96,6 +112,8 @@ export const products = [
     GST: "3 %",
     size: "",
     rating: 1,
+    mark: "Bis Hallmark",
+    shipping: "Insured Shipping",
   },
   {
     _id: 8,
@@ -110,6 +128,9 @@ export const products = [
     GST: "3 %",
     size: 6,
     rating: 2,
+    certification: "Certified Diamonds",
+    mark: "Bis Hallmark",
+    shipping: "Insured Shipping",
   },
   {
     _id: 9,
@@ -124,10 +145,14 @@ export const products = [
     GST: "3 %",
     size: "",
     rating: 4,
+    certification: "Certified Diamonds",
+    mark: "Bis Hallmark",
+    shipping: "Insured Shipping",
   },
   {
     _id: 10,
     name: "Diamond Mangalsutra with Chain",
+
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/m/MS00568-5_577.jpg",
     by: "Jwels",
@@ -138,6 +163,9 @@ export const products = [
     GST: "3 %",
     size: "",
     rating: 3,
+    certification: "Certified Diamonds",
+    mark: "Bis Hallmark",
+    shipping: "Insured Shipping",
   },
   {
     _id: 11,
@@ -152,6 +180,9 @@ export const products = [
     GST: "5.83 g",
     size: "",
     rating: 4,
+    certification: "Certified Diamonds",
+    mark: "Bis Hallmark",
+    shipping: "Insured Shipping",
   },
   {
     _id: 12,
@@ -166,5 +197,8 @@ export const products = [
     GST: "3 %",
     size: "",
     rating: 4,
+    certification: "Certified Diamonds",
+    mark: "Bis Hallmark",
+    shipping: "Insured Shipping",
   },
 ];

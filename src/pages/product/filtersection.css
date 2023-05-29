@@ -13,17 +13,14 @@
 }
 
 .filter-button {
-  font-size: large;
-  padding: 2px 10px;
   background: transparent;
-  font-weight: 500;
   font-size: 16px;
   border: none;
   cursor: pointer;
 }
 
 .filter-button:hover {
-  transition: 5ms;
+  transition: 1s;
   filter: blur(0.25px);
   border-bottom: 1px solid rgba(128, 128, 128, 0.832);
 }
@@ -39,12 +36,12 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  text-align: left;
 }
 
 .filter-range {
   margin-top: 1rem;
   width: 15rem;
+  accent-color: #b21368cb;
 }
 
 .filter-checkbox {
@@ -52,6 +49,14 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-sorting {
+  accent-color: #b21368;
+  padding-top: 1rem;
+  display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }

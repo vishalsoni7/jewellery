@@ -19,6 +19,7 @@ export const categories = [
   {
     _id: 3,
     categoryName: "MANGALSUTRA",
+
     description:
       "Discover the timeless elegance of our Mangalsutra collection, showcasing intricately crafted designs.",
   },

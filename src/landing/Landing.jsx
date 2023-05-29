@@ -36,13 +36,7 @@ export const Landing = () => {
             const { description, categoryName, _id } = item;
 
             return (
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "baseline",
-                }}
-              >
+              <div>
                 {" "}
                 <div key={_id} className="landing-container">
                   <div className="landing-mainDiv">
