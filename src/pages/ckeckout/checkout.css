@@ -1,0 +1,48 @@
+.checkout_parent_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout_cart_div {
+  width: 30rem;
+  padding: 1rem;
+  line-height: 2rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.checkout_heading {
+  margin-top: 0.5rem;
+  border-bottom: 1.2px solid rgba(128, 128, 128, 0.819);
+  border-top: 1.2px solid rgba(128, 128, 128, 0.819);
+  font-size: larger;
+}
+
+.checkout_div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: large;
+}
+
+.checkout_price {
+  text-align: left;
+  font-size: large;
+}
+
+.checkout_btn {
+  font-size: medium;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.6rem;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  color: whitesmoke;
+  background-color: rgba(0, 100, 200, 0.89);
+}
+
+.checkout_btn:active {
+  transition: 0.3s;
+  box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.3);
+}

@@ -36,16 +36,16 @@ export const Landing = () => {
             const { description, categoryName, _id } = item;
 
             return (
-              <div>
+              <div key={_id}>
                 {" "}
-                <div key={_id} className="landing-container">
+                <div className="landing-container">
                   <div className="landing-mainDiv">
                     <div className="category_container">
                       <div className="category_container-child">
                         <Link
                           onChange={() =>
                             dispatch({
-                              type: "FILTER_CATEGORY",
+                              type: "TOGGLE_SELECTED_CATEGORY",
                               payload: categoryName,
                             })
                           }

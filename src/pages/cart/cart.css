@@ -1,14 +1,8 @@
-.mycart-img {
-  object-fit: cover;
-  height: auto;
-  width: 200px;
-  border-radius: 3px;
-}
-
 .mycart-parent-div {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .mycart-content {
@@ -40,6 +34,13 @@
 .mycart-data {
   display: flex;
   align-items: center;
+}
+
+.mycart-img {
+  object-fit: cover;
+  height: auto;
+  width: 200px;
+  border-radius: 3px;
 }
 
 .mycart-quantity-btn {

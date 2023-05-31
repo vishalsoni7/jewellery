@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "../component/footer.css";
 
@@ -8,7 +8,12 @@ export const Footer = () => {
     <div>
       <footer>
         <section>
-          <li>Jwels</li>
+          <li>
+            {" "}
+            <Link className="footer-link" to="/">
+              Jwels{" "}
+            </Link>{" "}
+          </li>
           <li>Bring some happiness in your house with values.</li>
           <li>Privacy Policy</li>
           <li>Terms of Use</li>
@@ -16,39 +21,53 @@ export const Footer = () => {
         </section>
         <section>
           <li>About</li>
-          <NavLink className="footer-link" to="https://github.com/vishalsoni7">
+          <a
+            className="footer-link"
+            href="https://github.com/vishalsoni7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {" "}
             <li>Github</li>{" "}
-          </NavLink>
-          <NavLink className="footer-link" to="https://twitter.com/Vishsoni7">
+          </a>
+          <a
+            className="footer-link"
+            href="https://twitter.com/Vishsoni7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {" "}
             <li>Twitter</li>
-          </NavLink>
-          <NavLink
+          </a>
+          <a
             className="footer-link"
-            to="https://www.linkedin.com/in/vishal-soni-b21a4a1b8/"
+            href="https://www.linkedin.com/in/vishal-soni-b21a4a1b8/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {" "}
             <li>LinkedIn</li>
-          </NavLink>
-          <NavLink
+          </a>
+          <a
             className="footer-link"
-            to="https://www.instagram.com/vishaallsoni/"
+            href="https://www.instagram.com/vishaallsoni/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {" "}
             <li>Instagram</li>
-          </NavLink>
+          </a>
         </section>
         <section>
-          <NavLink className="footer-link" to="/signup">
+          <Link className="footer-link" to="/signup">
             {" "}
             <li>Sign Up</li>
-          </NavLink>
+          </Link>
 
-          <NavLink className="footer-link" to="/signin">
+          <Link className="footer-link" to="/signin">
             {" "}
             <li>Sign In</li>
-          </NavLink>
+          </Link>
         </section>
       </footer>
     </div>

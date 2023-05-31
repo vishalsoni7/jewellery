@@ -1,24 +1,32 @@
 export const initial_State = {
   category: [],
-  productData: [], // OG Data
-  filterData: [], // copy data
-  serachedData: "",
+  productData: [],
+  filterData: [],
+  searchedData: "",
   sortRatings: 5,
-  clickedCategory: {
-    RINGS: false,
-    BRACELETS: false,
-    MANGALSUTRAS: false,
-  },
   sortByPrice: "",
+  selectedCategories: [],
 };
 
 export const DataReducer = (state, action) => {
   switch (action.type) {
-    case "ALL_PRODUCTS": {
+    case "SET_PRODUCTS_DATA": {
       return {
         ...state,
-        productData: action.payload,
         filterData: action.payload,
+        productData: action.payload,
+      };
+    }
+    case "SET_FILTERED_DATA": {
+      return {
+        ...state,
+        filterData: action.payload,
+      };
+    }
+    case "SEARCHED_DATA": {
+      return {
+        ...state,
+        searchedData: action.payload,
       };
     }
     case "ALL_CATEGORIES": {
@@ -27,61 +35,40 @@ export const DataReducer = (state, action) => {
         category: action.payload,
       };
     }
-    case "SEARCHED_DATA": {
-      return {
-        ...state,
-        serachedData: action.payload,
-        filterData: [...state.productData].filter((item) =>
-          item.name.toLowerCase().includes(action.payload.toLowerCase())
-        ),
-      };
-    }
+
     case "FILTER_BY_RATING": {
       return {
         ...state,
         sortRatings: action.payload,
-        filterData: [...state.productData].filter(
-          ({ rating }) => rating <= action.payload
-        ),
-      };
-    }
-    case "FILTER_RINGS": {
-      return {
-        ...state,
-        clickedCategory: action.payload,
-        filterData: [...state.productData].filter(({ category }) => category),
-      };
-    }
-    case "FILTER_BRACELETS": {
-      return {
-        ...state,
-        clickedCategory: action.payload,
-        filterData: [...state.productData].filter(({ category }) => category),
-      };
-    }
-    case "FILTER_MANGALSUTRAS": {
-      return {
-        ...state,
-        clickedCategory: action.payload,
-        filterData: [...state.productData].filter(({ category }) => category),
       };
     }
     case "SORT_BY_PRICE": {
       return {
         ...state,
         sortByPrice: action.payload,
-        filterData: [...state.filterData].sort((a, b) =>
-          action.payload === "lowToHigh" ? a.price - b.price : b.price - a.price
-        ),
+      };
+    }
+    case "TOGGLE_SELECTED_CATEGORY": {
+      if (state.selectedCategories.includes(action.payload)) {
+        return {
+          ...state,
+          selectedCategories: state.selectedCategories.filter(
+            (item) => item !== action.payload
+          ),
+        };
+      }
+      return {
+        ...state,
+        selectedCategories: [...state.selectedCategories, action.payload],
       };
     }
     case "CLEAR": {
       return {
         ...state,
         filterData: state.productData,
-        serachedData: "",
-        sortRatings: 3,
-        clickedCategory: "",
+        searchedData: "",
+        sortRatings: 5,
+        selectedCategories: [],
         sortByPrice: "",
       };
     }

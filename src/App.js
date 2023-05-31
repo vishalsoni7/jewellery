@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Landing } from "./landing/Landing";
@@ -12,6 +13,7 @@ import { CurrentProduct } from "./pages/currentProduct/CurrentProduct";
 import { SignIn } from "./pages/signin/SignIn";
 import { SignUp } from "./pages/signup/SignUp";
 import { Error } from "./pages/Error/Error";
+import { CheckOut } from "./pages/ckeckout/Checkout";
 
 function App() {
   return (
@@ -25,7 +27,7 @@ function App() {
         <Route path="/product" element={<CurrentProduct />} />
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/product" element={<CurrentProduct />} />
+        <Route path="/checkout" element={<CheckOut />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="*" element={<Error />} />

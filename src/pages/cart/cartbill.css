@@ -1,9 +1,9 @@
 .card_bill {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   flex-direction: column;
   text-align: left;
-  width: 300px;
+  width: 18rem;
   height: auto;
   line-height: 2rem;
   gap: 1rem;
@@ -16,10 +16,6 @@
   text-align: center;
   border-bottom: 1px solid gainsboro;
 }
-/* .card_bill h3 {
-  text-align: center;
-  border-bottom: 1px solid gainsboro;
-} */
 
 .card_bill p {
   font-size: medium;
@@ -39,6 +35,7 @@
   border: none;
   border-radius: 5px;
   font-size: medium;
+  width: 100%;
 }
 
 .cart_bill_button:active {

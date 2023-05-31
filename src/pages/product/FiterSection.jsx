@@ -6,11 +6,9 @@ import "../product/filtersection.css";
 
 export const Filters = () => {
   let {
-    state: { clickedCategory, sortRatings },
+    state: { sortRatings, sortByPrice, category, selectedCategories },
     dispatch,
   } = useContext(DataContext);
-
-  console.log(clickedCategory);
 
   return (
     <div className="filter-mainDiv">
@@ -26,7 +24,7 @@ export const Filters = () => {
 
       <div>
         <h4> Ratings </h4>
-        <div className="filter-price">
+        <div className="filter_ratings">
           <p> 1 ★ </p> <p> 2 ★ </p> <p> 3 ★ </p> <p> 4 ★ </p> <p> 5 ★ </p>
         </div>
         <input
@@ -45,35 +43,27 @@ export const Filters = () => {
 
       <div className="filter-checkbox">
         <h4>Categories</h4>
-        <input
-          type="checkbox"
-          checked={clickedCategory.RINGS}
-          onChange={(e) =>
-            dispatch({ type: "FILTER_RINGS", payload: e.target.checked })
-          }
-        />
-        Rings
-        <input
-          type="checkbox"
-          checked={clickedCategory.BRACELETS}
-          onChange={(e) =>
-            dispatch({ type: "FILTER_BRACELETS", payload: e.target.checked })
-          }
-        />{" "}
-        Baracelets
-        <input
-          type="checkbox"
-          checked={clickedCategory.MANGALSUTRAS}
-          onChange={(e) =>
-            dispatch({ type: "FILTER_MANGALSUTRAS", payload: e.target.checked })
-          }
-        />{" "}
-        Mangalsutra
+        {category.map((item) => {
+          return (
+            <div>
+              <input
+                type="checkbox"
+                checked={selectedCategories.includes(item.categoryName)}
+                onChange={() =>
+                  dispatch({
+                    type: "TOGGLE_SELECTED_CATEGORY",
+                    payload: item.categoryName,
+                  })
+                }
+              />{" "}
+              {item.categoryName}
+            </div>
+          );
+        })}
       </div>
 
       <div>
         <h4> Sort By </h4>
-
         <div className="filter-sorting">
           <label>
             <input
@@ -82,6 +72,7 @@ export const Filters = () => {
               }
               type="radio"
               name="sort"
+              checked={sortByPrice === "" ? false : null}
             />{" "}
             Price - High to Low
           </label>
@@ -92,6 +83,7 @@ export const Filters = () => {
               }
               type="radio"
               name="sort"
+              checked={sortByPrice === "" ? false : null}
             />{" "}
             Price - Low to High
           </label>
@@ -101,39 +93,6 @@ export const Filters = () => {
   );
 };
 
-// const categoriesArray = productData.reduce(
-//   (acc, { category }) => (acc.includes(category) ? acc : [...acc, category]),
-//   []
-// );
-
-// const [ring, setRing] = useState(false);
-// const [bracelet, setBracelet] = useState(false);
-// const [mangalsutra, setMangalsutra] = useState(false);
-
-// if (ring) {
-//   filterData = filterData.filter(({ Ring }) => Ring);
-// }
-
-// if (bracelet) {
-//   filterData = filterData.filter(({ Bracelet }) => Bracelet);
-// }
-
-// if (mangalsutra) {
-//   filterData = filterData.filter(({ Mangalsutra }) => Mangalsutra);
-// }
-
-// const handleRing = () => {
-//   setRing((pre) => !pre);
-// };
-
-// const handleBracelet = () => {
-//   setBracelet((pre) => !pre);
-// };
-
-// const handleMangalsutra = () => {
-//   setMangalsutra((pre) => !pre);
-// };
-
 /* <div>
         <h4>Category</h4>
         <div className="filter-checkbox">
@@ -142,18 +101,18 @@ export const Filters = () => {
           <input onChange={handleMangalsutra} type="checkbox" /> Mangalsutra
         </div>
 
-        <div className="filter-checkbox">
-          {categoriesArray.map((cat) => (
-            <div>
-              <input
-                checked={clickedCategory.RINGS}
-                onChange={() =>
-                  dispatch({ type: cat.categoryName, payload: cat })
-                }
-                type="checkbox"
-              />
-              {""} {cat}
-            </div>
-          ))}
-        </div>
-      </div> */
+      //   <div className="filter-checkbox">
+      //     {categoriesArray.map((cat) => (
+      //       <div>
+      //         <input
+      //           checked={clickedCategory.RINGS}
+      //           onChange={() =>
+      //             dispatch({ type: cat.categoryName, payload: cat })
+      //           }
+      //           type="checkbox"
+      //         />
+      //         {""} {cat}
+      //       </div>
+      //     ))}
+      //   </div>
+      // </div> */

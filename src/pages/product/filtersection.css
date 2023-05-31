@@ -26,28 +26,32 @@
 }
 
 .filter-heading {
+  margin: 1.5rem;
   display: flex;
+  gap: 5rem;
   align-items: center;
   justify-content: space-around;
   text-align: left;
 }
 
-.filter-price {
+.filter_ratings {
+  margin-top: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
 .filter-range {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   width: 15rem;
   accent-color: #b21368cb;
 }
 
 .filter-checkbox {
-  padding-top: 1rem;
+  margin-top: 1rem;
   display: flex;
   align-items: flex-start;
+  accent-color: #b21368;
   justify-content: space-around;
   flex-direction: column;
   gap: 0.5rem;

@@ -1,7 +1,7 @@
 .products-maiDiv {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   margin-left: 20rem;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .products-cart:hover {
-  transition: 0.1s;
+  transition: 0.2s;
   transform: scale(0.98);
 }
 

@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import "../currentProduct/currentProduct.css";
 
 import { DataContext } from "../../Context/DataContext";
+//import { Loader } from "../../component/loader";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

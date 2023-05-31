@@ -1,32 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { WishListContext } from "../../Context/WishListContext";
+
 import "../wishlist/wishlist.css";
 
-export const mails = [
-  {
-    _id: 1,
-    name: "The Naveah Diamond Ring",
-    img:
-      "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/l/LR00055-6__1450266466.jpg",
-    by: "Jwels",
-    category: "Ring",
-    price: 10246,
-    weight: "0.84 g",
-    metal: "Yellow Gold",
-    GST: "3 %",
-    size: 7,
-    rating: 5,
-  },
-];
-
 export const WishList = () => {
+  const { wishlist } = useContext(WishListContext);
   return (
     <div>
       <div className="wishlist-mainDiv">
         <h2>
           {" "}
-          My wish list <sup> {`(${mails.length})`} </sup>{" "}
+          My wish list <sup> {`(${wishlist.length})`} </sup>{" "}
         </h2>
-        {mails.map((item) => {
+        {wishlist.map((item) => {
           const { _id, name, img, by, price, weight, rating } = item;
           return (
             <div key={_id} className="wishlist-card">
