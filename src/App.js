@@ -14,6 +14,7 @@ import { SignIn } from "./pages/signin/SignIn";
 import { SignUp } from "./pages/signup/SignUp";
 import { Error } from "./pages/Error/Error";
 import { CheckOut } from "./pages/ckeckout/Checkout";
+import { AddressForm } from "./utils/AddressForm";
 
 function App() {
   return (
@@ -24,10 +25,11 @@ function App() {
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/" element={<Landing />} />
         <Route path="/products" element={<Product />} />
-        <Route path="/product" element={<CurrentProduct />} />
+        <Route path="/product/:productId" element={<CurrentProduct />} />
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/address" element={<AddressForm />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="*" element={<Error />} />

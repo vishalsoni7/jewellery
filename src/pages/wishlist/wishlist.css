@@ -1,6 +1,6 @@
 .wishlist-img {
   object-fit: cover;
-  height: 220px;
+  height: auto;
   width: 200px;
   border-radius: 3px;
 }

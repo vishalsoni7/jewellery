@@ -27,7 +27,20 @@ export const WishlistProvider = ({ children }) => {
       console.error(error);
     }
   };
-  const values = { userToken, wishlist, addToWishlist };
+
+  const removeFromWishlist = async (productId, userToken) => {
+    try {
+      const response = await axios.delete(`/api/user/wishlist/${productId}`, {
+        headers: { authorization: userToken },
+      });
+      setWishlist(response.data.wishlist);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const values = { userToken, wishlist, addToWishlist, removeFromWishlist };
+
   return (
     <WishListContext.Provider value={values}>
       {" "}

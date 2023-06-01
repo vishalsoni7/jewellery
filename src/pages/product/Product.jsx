@@ -3,6 +3,9 @@ import React, { useContext } from "react";
 
 import "../product/product.css";
 
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+
 import { DataContext } from "../../Context/DataContext";
 import { Filters } from "./FiterSection";
 import { Loader } from "../../component/loader";
@@ -28,7 +31,10 @@ export const Product = () => {
             const { name, price, img, _id, weight } = item;
             return (
               <div key={_id} class="products-cart">
-                <NavLink to="/product" onClick={() => singleProduct(_id)}>
+                <NavLink
+                  to={`/product/{_id}`}
+                  onClick={() => singleProduct(_id)}
+                >
                   <img className="products-img" src={img} alt="products" />
                 </NavLink>
                 <p>{name}</p>
@@ -48,6 +54,7 @@ export const Product = () => {
                   >
                     Add to Wishlist
                   </button>
+                  {/* <ToastContainer /> */}
                 </div>
               </div>
             );

@@ -19,7 +19,9 @@ export const CartProvider = ({ children }) => {
           headers: { authorization: userToken },
         }
       );
-      setCart(response.data.cart);
+      if (response.status === 201) {
+        setCart(response.data.cart);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -31,17 +33,30 @@ export const CartProvider = ({ children }) => {
         headers: { authorization: userToken },
       });
       setCart(response.data.cart);
+      console.log("cart", response);
     } catch (error) {
       console.error(error);
     }
   };
 
+  const handleQnty = async (type, productId, userToken) => {
+    try {
+      const response = await axios.post(
+        `/api/user/cart/${productId}`,
+        {
+          action: { type: type },
+        },
+        {
+          headers: { authorization: userToken },
+        }
+      );
+      setCart(response.data.cart);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const values = { cart, addToCart, userToken, removeFromCart, handleQnty };
   return (
-    <CartContext.Provider
-      value={{ cart, addToCart, userToken, removeFromCart }}
-    >
-      {" "}
-      {children}{" "}
-    </CartContext.Provider>
+    <CartContext.Provider value={values}> {children} </CartContext.Provider>
   );
 };

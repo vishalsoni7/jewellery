@@ -45,7 +45,7 @@ export const Filters = () => {
         <h4>Categories</h4>
         {category.map((item) => {
           return (
-            <div>
+            <div key={item.categoryName}>
               <input
                 type="checkbox"
                 checked={selectedCategories.includes(item.categoryName)}
@@ -92,27 +92,3 @@ export const Filters = () => {
     </div>
   );
 };
-
-/* <div>
-        <h4>Category</h4>
-        <div className="filter-checkbox">
-          <input onChange={handleRing} type="checkbox" /> Rings
-          <input onChange={handleBracelet} type="checkbox" /> Bracelets
-          <input onChange={handleMangalsutra} type="checkbox" /> Mangalsutra
-        </div>
-
-      //   <div className="filter-checkbox">
-      //     {categoriesArray.map((cat) => (
-      //       <div>
-      //         <input
-      //           checked={clickedCategory.RINGS}
-      //           onChange={() =>
-      //             dispatch({ type: cat.categoryName, payload: cat })
-      //           }
-      //           type="checkbox"
-      //         />
-      //         {""} {cat}
-      //       </div>
-      //     ))}
-      //   </div>
-      // </div> */

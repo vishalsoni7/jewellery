@@ -11,9 +11,13 @@ import {
   faCheck,
   faTruckFast,
 } from "@fortawesome/free-solid-svg-icons";
+import { CartContext } from "../../Context/CartContext";
+import { WishListContext } from "../../Context/WishListContext";
 
 export const CurrentProduct = () => {
   const { data } = useContext(DataContext);
+  const { addToCart, userToken } = useContext(CartContext);
+  const { addToWishlist } = useContext(WishListContext);
 
   return (
     <div>
@@ -48,9 +52,19 @@ export const CurrentProduct = () => {
             <p> Size : {data.size} </p>
             <p> Rating : {data.rating} </p>
             <h2> M.R.P : {data.price} ₹</h2>
-            <button className="current-addtocart-btn">Add to Cart</button>
+            <button
+              onClick={() => addToCart(data, userToken)}
+              className="current-addtocart-btn"
+            >
+              Add to Cart
+            </button>
             <br />
-            <button className="current-wishlist-btn">Add to Wishlist</button>
+            <button
+              onClick={() => addToWishlist(data, userToken)}
+              className="current-wishlist-btn"
+            >
+              Add to Wishlist
+            </button>
           </div>
         </div>
       </div>

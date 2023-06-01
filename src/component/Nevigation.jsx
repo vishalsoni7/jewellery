@@ -26,14 +26,16 @@ export const Nevigation = () => {
         </div>
 
         <div className="div-B">
-          <input
-            onChange={(e) =>
-              dispatch({ type: "SEARCHED_DATA", payload: e.target.value })
-            }
-            placeholder=" 🔍 search for product"
-            className="search-bar"
-            type="text"
-          />
+          <NavLink>
+            <input
+              onChange={(e) =>
+                dispatch({ type: "SEARCHED_DATA", payload: e.target.value })
+              }
+              placeholder=" 🔍 search for product"
+              className="search-bar"
+              type="text"
+            />
+          </NavLink>
         </div>
 
         <div className="div-C">

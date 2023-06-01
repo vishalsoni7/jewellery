@@ -1,6 +1,6 @@
 export const products = [
   {
-    _id: 1,
+    _id: "1",
     name: "The Naveah Diamond Ring",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/l/LR00055-6__1450266466.jpg",
@@ -17,7 +17,7 @@ export const products = [
     shipping: "Insured Shipping",
   },
   {
-    _id: 2,
+    _id: "2",
     name: "The Blink Diamond Ring",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/l/LR02646-6_513.jpg",
@@ -34,8 +34,8 @@ export const products = [
     shipping: "Insured Shipping",
   },
   {
-    _id: 3,
-    name: "The Gold Bracelet",
+    _id: "3",
+    name: "The Gold Antique Bracelet",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/g/GBL02284277_894.jpg",
     by: "Jwels",
@@ -51,7 +51,7 @@ export const products = [
     shipping: "Insured Shipping",
   },
   {
-    _id: 4,
+    _id: "4",
     name: "The Zrimat Diamond Ring",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/g/GR00518-6_624.jpg",
@@ -68,7 +68,7 @@ export const products = [
     shipping: "Insured Shipping",
   },
   {
-    _id: 5,
+    _id: "5",
     name: "The 3 Gold Flowers Gold Bracelet",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/c/CZBR00086-6_630.jpg",
@@ -84,7 +84,7 @@ export const products = [
     shipping: "Insured Shipping",
   },
   {
-    _id: 6,
+    _id: "6",
     name: "The Cloud N Kite Gold Bracelet",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/c/CZBR00088-6_726.jpg",
@@ -100,7 +100,7 @@ export const products = [
     shipping: "Insured Shipping",
   },
   {
-    _id: 7,
+    _id: "7",
     name: "The Osiane Gold Bracelet",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/b/BR00416-1__1093242591.jpg",
@@ -116,7 +116,7 @@ export const products = [
     shipping: "Insured Shipping",
   },
   {
-    _id: 8,
+    _id: "8",
     name: "The Berinhard Gold Ring",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/z/ZLR00463-6_316.jpg",
@@ -133,8 +133,8 @@ export const products = [
     shipping: "Insured Shipping",
   },
   {
-    _id: 9,
-    name: "Diamond Mangalsutra",
+    _id: "9",
+    name: "Diamond Ipsita Mangalsutra",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/m/MS00032-5_590.jpg",
     by: "Jwels",
@@ -150,7 +150,7 @@ export const products = [
     shipping: "Insured Shipping",
   },
   {
-    _id: 10,
+    _id: "10",
     name: "Diamond Mangalsutra with Chain",
 
     img:
@@ -168,7 +168,7 @@ export const products = [
     shipping: "Insured Shipping",
   },
   {
-    _id: 11,
+    _id: "11",
     name: "Diamond Mangalsutra with Chain",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/m/MS00566-5_980.jpg",
@@ -185,7 +185,7 @@ export const products = [
     shipping: "Insured Shipping",
   },
   {
-    _id: 12,
+    _id: "12",
     name: "The Yashica Diamond Mangalsutra",
     img:
       "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/preview/t/TN00040-5.jpg",

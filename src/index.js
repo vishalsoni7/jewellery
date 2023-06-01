@@ -26,7 +26,6 @@ ReactDOM.render(
         </AuthProvider>
       </Categories>
     </BrowserRouter>
-    ,
   </React.StrictMode>,
   document.getElementById("root")
 );

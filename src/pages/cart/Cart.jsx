@@ -1,12 +1,16 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
+import { WishListContext } from "../../Context/WishListContext";
 
 import "../cart/cart.css";
 
 import { CartBill } from "./CartBill";
 
 export const Cart = () => {
-  const { cart, removeFromCart, userToken } = useContext(CartContext);
+  const { addToWishlist } = useContext(WishListContext);
+  const { cart, removeFromCart, userToken, handleQnty } = useContext(
+    CartContext
+  );
   return (
     <div
       style={{
@@ -21,7 +25,7 @@ export const Cart = () => {
             My Cart <sup> {`(${cart.length})`} </sup>
           </h2>
           {cart.map((item) => {
-            const { _id, name, img, by, price, weight } = item;
+            const { _id, name, img, by, price, weight, qty } = item;
             return (
               <div key={_id} className="mycart-card">
                 <img className="mycart-img" src={img} alt="products" />
@@ -31,18 +35,37 @@ export const Cart = () => {
                   <p> Weight: {weight} </p>
                   <p> Price: {price} ₹</p>
 
-                  <button className="mycart-quantity-btn"> - </button>
-                  <span className="quantity"> {cart.length} </span>
-
-                  <button className="mycart-quantity-btn"> + </button>
-                  <br />
-                  <button className="mycart-btn"> Move to Wish list </button>
                   <button
-                    onClick={() => removeFromCart(item, userToken)}
-                    className="remove-mycart-btn"
+                    onClick={() => handleQnty("decrement", _id, userToken)}
+                    className="mycart-quantity-btn"
                   >
-                    Remove
+                    -
                   </button>
+                  <span className="quantity"> {qty} </span>
+
+                  <button
+                    onClick={() => handleQnty("increment", _id, userToken)}
+                    className="mycart-quantity-btn"
+                  >
+                    +
+                  </button>
+                  {/* <br /> */}
+                  <div>
+                    {" "}
+                    <button
+                      onClick={() => addToWishlist(item, userToken)}
+                      className="mycart-btn"
+                    >
+                      {" "}
+                      Move to Wish list{" "}
+                    </button>
+                    <button
+                      onClick={() => removeFromCart(_id, userToken)}
+                      className="remove-mycart-btn"
+                    >
+                      Remove
+                    </button>{" "}
+                  </div>
                 </div>
               </div>
             );

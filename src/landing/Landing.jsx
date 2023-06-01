@@ -43,7 +43,7 @@ export const Landing = () => {
                     <div className="category_container">
                       <div className="category_container-child">
                         <Link
-                          onChange={() =>
+                          onClick={() =>
                             dispatch({
                               type: "TOGGLE_SELECTED_CATEGORY",
                               payload: categoryName,

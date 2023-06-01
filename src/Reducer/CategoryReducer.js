@@ -59,6 +59,7 @@ export const DataReducer = (state, action) => {
       }
       return {
         ...state,
+
         selectedCategories: [...state.selectedCategories, action.payload],
       };
     }

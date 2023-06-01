@@ -13,7 +13,6 @@ export const AuthProvider = ({ children }) => {
   });
 
   const userSignin = async (email, password, navigate) => {
-    console.log(email, password);
     try {
       const { status, data } = await axios.post("/api/auth/login", {
         email,

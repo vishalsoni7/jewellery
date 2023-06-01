@@ -1,10 +1,15 @@
 import React, { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 import { WishListContext } from "../../Context/WishListContext";
 
 import "../wishlist/wishlist.css";
 
 export const WishList = () => {
-  const { wishlist } = useContext(WishListContext);
+  const { wishlist, removeFromWishlist, userToken } = useContext(
+    WishListContext
+  );
+
+  const { addToCart } = useContext(CartContext);
   return (
     <div>
       <div className="wishlist-mainDiv">
@@ -24,8 +29,19 @@ export const WishList = () => {
                 <p> Rating : {rating} </p>
                 <p> Price: {price} ₹</p>
                 <p> Weight: {weight} </p>
-                <button className="wishlist-btn"> Move to Cart </button>
-                <button className="remove-wishlist-btn">Remove</button>
+                <button
+                  onClick={() => addToCart(item, userToken)}
+                  className="wishlist-btn"
+                >
+                  {" "}
+                  Move to Cart{" "}
+                </button>
+                <button
+                  onClick={() => removeFromWishlist(_id, userToken)}
+                  className="remove-wishlist-btn"
+                >
+                  Remove
+                </button>
               </div>
             </div>
           );

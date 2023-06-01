@@ -37,7 +37,7 @@
 }
 
 .mycart-img {
-  object-fit: cover;
+  object-fit: fill;
   height: auto;
   width: 200px;
   border-radius: 3px;
