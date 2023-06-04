@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: space-around;
   text-align: left;
+  margin-bottom: 5rem;
 }
 
 .wishlist-card {
@@ -75,4 +76,12 @@
 .remove-wishlist-btn:active {
   font-size: small;
   color: red;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  font-size: xx-large;
 }

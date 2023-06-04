@@ -1,6 +1,8 @@
 import React, { createContext, useState } from "react";
 import axios from "axios";
 
+import toast, { Toaster } from "react-hot-toast";
+
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
@@ -21,6 +23,14 @@ export const CartProvider = ({ children }) => {
       );
       if (response.status === 201) {
         setCart(response.data.cart);
+        toast.success("Item added to cart.", {
+          style: {
+            fontSize: "large",
+            padding: ".5rem",
+            background: "#252525",
+            color: "whitesmoke",
+          },
+        });
       }
     } catch (error) {
       console.error(error);
@@ -33,7 +43,14 @@ export const CartProvider = ({ children }) => {
         headers: { authorization: userToken },
       });
       setCart(response.data.cart);
-      console.log("cart", response);
+      toast.error("Item removed!", {
+        style: {
+          fontSize: "large",
+          padding: ".5rem",
+          background: "#252525",
+          color: "whitesmoke",
+        },
+      });
     } catch (error) {
       console.error(error);
     }
@@ -55,8 +72,42 @@ export const CartProvider = ({ children }) => {
       console.error(error);
     }
   };
-  const values = { cart, addToCart, userToken, removeFromCart, handleQnty };
+
+  const inCart = (productId) => {
+    return cart.find((item) => item.id === productId);
+  };
+
+  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+
+  const discount = totalPrice * (10 / 100);
+
+  const discountedPrice = totalPrice - discount;
+
+  const itemsInCart = cart.reduce((acc, curr) => {
+    const currentValue = curr.name;
+    if (!acc[currentValue]) {
+      return { ...acc, [currentValue]: 1 };
+    } else {
+      return { ...acc, [currentValue]: acc[currentValue] + 1 };
+    }
+  }, {});
+
+  const values = {
+    cart,
+    addToCart,
+    userToken,
+    removeFromCart,
+    handleQnty,
+    inCart,
+    totalPrice,
+    discount,
+    discountedPrice,
+    itemsInCart,
+  };
   return (
-    <CartContext.Provider value={values}> {children} </CartContext.Provider>
+    <>
+      <CartContext.Provider value={values}> {children} </CartContext.Provider>{" "}
+      <Toaster position="top-right" reverseOrder={false} />
+    </>
   );
 };

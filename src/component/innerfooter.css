@@ -1,0 +1,35 @@
+.inner_footer_parent_div {
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.inner_footer_div {
+  gap: 3rem;
+  display: flex;
+  margin-top: 0.5rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.font_awsome_logo {
+  font-size: x-large;
+  color: #252525;
+}
+
+.inner_footer_text {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.inner_footer_emojies {
+  display: inline;
+}

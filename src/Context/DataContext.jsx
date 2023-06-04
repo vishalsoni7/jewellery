@@ -77,11 +77,8 @@ export const Categories = ({ children }) => {
     singleProduct,
     data,
   };
+
   return (
     <DataContext.Provider value={values}> {children} </DataContext.Provider>
   );
 };
-
-// data = data.sort((a, b) =>
-//   sortByPrice === "lowToHigh" ? a.price - b.price : b.price - a.price
-// );

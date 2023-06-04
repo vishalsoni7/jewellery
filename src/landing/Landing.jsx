@@ -19,7 +19,7 @@ export const Landing = () => {
     <div>
       <SlideShow />{" "}
       <div>
-        <h1 className="category-heading"> Top Collections</h1>
+        <h1 className="heading_h1"> Top Collections</h1>
         <p className="category-description">
           Our jewelry categories include stunning engagement rings, delicate
           charm bracelets and timeless mangalsutra,

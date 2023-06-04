@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { InnerFooter } from "../../component/InnerFooter";
 
 import "../Error/error.css";
 
@@ -20,6 +21,7 @@ export const Error = () => {
         </NavLink>{" "}
         to see all products.
       </h2>
+      <InnerFooter />
     </div>
   );
 };

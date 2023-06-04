@@ -1,6 +1,8 @@
 .card_bill {
   display: flex;
   flex-wrap: wrap;
+  position: fixed;
+  margin-left: -10rem;
   flex-direction: column;
   text-align: left;
   width: 18rem;
@@ -17,11 +19,20 @@
   border-bottom: 1px solid gainsboro;
 }
 
-.card_bill p {
-  font-size: medium;
+.cartbill_checkout_div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cartbill_checkout_div p {
+  font-size: large;
 }
 
 .bill_total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-top: 1px solid gainsboro;
   border-bottom: 1px solid gainsboro;
   font-size: large;
@@ -41,4 +52,11 @@
 .cart_bill_button:active {
   transition: 0.3s;
   box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.3);
+}
+
+.cartbill_dicsount {
+  word-spacing: 3px;
+  text-align: center;
+  color: #18a558;
+  font-size: larger;
 }

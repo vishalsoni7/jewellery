@@ -34,6 +34,11 @@ html {
   box-shadow: 0 26px 58px 0 rgba(0, 0, 0, 0.22),
     0 5px 14px 0 rgba(0, 0, 0, 0.18);
 }
+.heading_h1 {
+  padding-top: 2rem;
+  font-size: 32px;
+}
+
 .category-heading {
   padding-top: 2rem;
   font-size: 32px;

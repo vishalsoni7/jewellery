@@ -85,3 +85,31 @@
   font-size: medium;
   color: #069848;
 }
+
+.current-gotocart-btn {
+  color: whitesmoke;
+  background-color: #b21368;
+  border-radius: 3px;
+  border: 1px solid #b21368;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  width: 50%;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.current-gotocart-btn:active {
+  color: #252525;
+  transition: 0.2s;
+  background-color: whitesmoke;
+}
+
+.current-addtocart-btn-link {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.current_gotowishlist-link {
+  color: #252525;
+  text-decoration: none;
+}

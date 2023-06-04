@@ -61,3 +61,18 @@
   margin-top: 1.2rem;
   font-size: large;
 }
+
+.guest {
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-size: large;
+}
+
+.guest:active {
+  transition: 0.3s;
+  font-size: medium;
+}
+
+.guest_color {
+  color: #b21368;
+}

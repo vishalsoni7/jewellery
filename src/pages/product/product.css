@@ -53,6 +53,11 @@
   border-radius: 0px 0px 0px 8px;
 }
 
+.products-cart-link_button {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
 .products-cart-button2 {
   padding: 0.69rem;
   width: 50%;

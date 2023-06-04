@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
@@ -68,9 +69,7 @@ export const SlideShow = () => {
                 background: `url(${image.url}) no-repeat center`,
                 backgroundSize: "39% auto",
               }}
-            >
-              {" "}
-            </div>{" "}
+            ></div>{" "}
           </div>
         ))}
       </Slide>

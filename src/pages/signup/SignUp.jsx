@@ -1,9 +1,16 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { InnerFooter } from "../../component/InnerFooter";
+import { AuthContext } from "../../Context/AuthContext";
 
 import "../signup/signup.css";
 
 export const SignUp = () => {
+  const navigate = useNavigate();
+  const { auth } = useContext(AuthContext);
+  if (auth.isLoggedIn) {
+    navigate("/");
+  }
   return (
     <div className="sign_up_div">
       <h1> Register </h1>
@@ -50,6 +57,7 @@ export const SignUp = () => {
           Already have an acount ? <NavLink to="/signin">Signin</NavLink>{" "}
         </p>
       </div>
+      <InnerFooter />
     </div>
   );
 };

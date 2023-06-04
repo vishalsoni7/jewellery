@@ -27,7 +27,6 @@ export const AddressForm = () => {
 
   const removeAddress = (address) => {
     const filteredAddress = addedUser.filter((add) => {
-      console.log("address", address.id, "add", add.id);
       return add.id !== address.id;
     });
     setAddedUser(filteredAddress);
@@ -125,9 +124,7 @@ export const AddressForm = () => {
       <div>
         {addedUser.map((item) => (
           <div>
-            {" "}
             <ul>
-              {" "}
               <li> {item.fullName} </li>{" "}
             </ul>
             <button onClick={() => removeAddress(item)} type="button">

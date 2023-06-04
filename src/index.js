@@ -1,6 +1,6 @@
 import React from "react";
+import ReactDOM from "react-dom/client";
 
-import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
@@ -13,7 +13,9 @@ import { WishlistProvider } from "./Context/WishListContext";
 // Call make Server
 makeServer();
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Categories>
@@ -26,6 +28,5 @@ ReactDOM.render(
         </AuthProvider>
       </Categories>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

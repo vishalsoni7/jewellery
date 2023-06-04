@@ -2,6 +2,7 @@ import React from "react";
 
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+
 import { Landing } from "./landing/Landing";
 import Mockman from "mockman-js";
 
@@ -15,6 +16,7 @@ import { SignUp } from "./pages/signup/SignUp";
 import { Error } from "./pages/Error/Error";
 import { CheckOut } from "./pages/ckeckout/Checkout";
 import { AddressForm } from "./utils/AddressForm";
+import RequireAuth from "./utils/RequireAuth";
 
 function App() {
   return (
@@ -26,9 +28,32 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/products" element={<Product />} />
         <Route path="/product/:productId" element={<CurrentProduct />} />
-        <Route path="/wishlist" element={<WishList />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<CheckOut />} />
+
+        <Route
+          path="/wishlist"
+          element={
+            <RequireAuth>
+              <WishList />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <RequireAuth>
+              <Cart />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            <RequireAuth>
+              {" "}
+              <CheckOut />
+            </RequireAuth>
+          }
+        />
         <Route path="/address" element={<AddressForm />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />

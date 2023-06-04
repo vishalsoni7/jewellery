@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { InnerFooter } from "../../component/InnerFooter";
 import { CartContext } from "../../Context/CartContext";
 import { WishListContext } from "../../Context/WishListContext";
 
@@ -21,61 +22,70 @@ export const Cart = () => {
     >
       <div className="mycart-parent-div">
         <div className="mycart-content">
-          <h2>
-            My Cart <sup> {`(${cart.length})`} </sup>
-          </h2>
-          {cart.map((item) => {
-            const { _id, name, img, by, price, weight, qty } = item;
-            return (
-              <div key={_id} className="mycart-card">
-                <img className="mycart-img" src={img} alt="products" />
-                <div>
-                  <h2> {name} </h2>
-                  <p className="mycart-p"> By : {by} </p>
-                  <p> Weight: {weight} </p>
-                  <p> Price: {price} ₹</p>
+          {cart.length ? (
+            <>
+              {" "}
+              <h2>
+                My Cart <sup> {`(${cart.length})`} </sup>
+              </h2>{" "}
+              {cart.map((item) => {
+                const { _id, name, img, by, price, weight, qty } = item;
+                return (
+                  <div key={_id} className="mycart-card">
+                    <img className="mycart-img" src={img} alt="products" />
+                    <div>
+                      <h2> {name} </h2>
+                      <p className="mycart-p"> By : {by} </p>
+                      <p> Weight: {weight} </p>
+                      <p> Price: {price} ₹</p>
 
-                  <button
-                    onClick={() => handleQnty("decrement", _id, userToken)}
-                    className="mycart-quantity-btn"
-                  >
-                    -
-                  </button>
-                  <span className="quantity"> {qty} </span>
+                      <button
+                        onClick={() => handleQnty("decrement", _id, userToken)}
+                        className="mycart-quantity-btn"
+                      >
+                        -
+                      </button>
+                      <span className="quantity"> {qty} </span>
 
-                  <button
-                    onClick={() => handleQnty("increment", _id, userToken)}
-                    className="mycart-quantity-btn"
-                  >
-                    +
-                  </button>
-                  {/* <br /> */}
-                  <div>
-                    {" "}
-                    <button
-                      onClick={() => addToWishlist(item, userToken)}
-                      className="mycart-btn"
-                    >
-                      {" "}
-                      Move to Wish list{" "}
-                    </button>
-                    <button
-                      onClick={() => removeFromCart(_id, userToken)}
-                      className="remove-mycart-btn"
-                    >
-                      Remove
-                    </button>{" "}
+                      <button
+                        onClick={() => handleQnty("increment", _id, userToken)}
+                        className="mycart-quantity-btn"
+                      >
+                        +
+                      </button>
+                      <div>
+                        {" "}
+                        <button
+                          onClick={() => addToWishlist(item, userToken)}
+                          className="mycart-btn"
+                        >
+                          {" "}
+                          Move to Wish list{" "}
+                        </button>
+                        <button
+                          onClick={() => removeFromCart(_id, userToken)}
+                          className="remove-mycart-btn"
+                        >
+                          Remove
+                        </button>{" "}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
+                );
+              })}
+            </>
+          ) : (
+            <h2 className="empty">
+              Your Cart Is Empty !{" "}
+              <span role="img" aria-label="sad">
+                ☹️
+              </span>{" "}
+            </h2>
+          )}
         </div>
       </div>{" "}
-      <div>
-        {" "}
-        <CartBill />{" "}
-      </div>
+      {cart.length ? <CartBill /> : null}
+      <InnerFooter />
     </div>
   );
 };

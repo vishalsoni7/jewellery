@@ -8,6 +8,8 @@
 }
 
 body {
+  width: auto;
+  height: auto;
   color: #252525;
   background-color: whitesmoke;
 }
