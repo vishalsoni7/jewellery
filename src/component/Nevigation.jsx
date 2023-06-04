@@ -1,5 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+import { useContext } from "react";
+import { DataContext } from "../Context/DataContext";
+import { CartContext } from "../Context/CartContext";
+import { WishListContext } from "../Context/WishListContext";
 
 import "../component/nevigation.css";
 
@@ -11,47 +16,51 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export const Nevigation = () => {
+  const { dispatch } = useContext(DataContext);
+  const { wishlist } = useContext(WishListContext);
+  const { cart } = useContext(CartContext);
+
   return (
-    <div
-      style={{
-        position: "fixed",
-        width: "100%",
-        top: "0",
-        left: "0",
-        zIndex: "100",
-      }}
-    >
+    <div className="navBar_mainDiv">
       <nav className="navBar">
         <div className="div-A">
-          <Link to="/" className="link">
+          <NavLink to="/" className="link">
             <h1 className="heading"> Jwels </h1>
-          </Link>
+          </NavLink>
         </div>
 
         <div className="div-B">
           <input
-            placeholder="   search for product"
+            onChange={(e) =>
+              dispatch({ type: "SEARCHED_DATA", payload: e.target.value })
+            }
+            placeholder=" 🔍 Search for product"
             className="search-bar"
             type="text"
           />
         </div>
 
         <div className="div-C">
-          <Link className="link" to="/wishlist">
-            <FontAwesomeIcon icon={faHeart} size="xl" />
-          </Link>
+          <NavLink className="link" to="/wishlist">
+            <FontAwesomeIcon icon={faHeart} size="xl" />{" "}
+            <sup className="length">
+              {" "}
+              {wishlist.length ? wishlist.length : null}
+            </sup>
+          </NavLink>
         </div>
 
         <div className="div-D">
-          <Link className="link" to="/cart">
+          <NavLink className="link" to="/cart">
             <FontAwesomeIcon icon={faCartShopping} size="xl" />
-          </Link>
+            <sup className="length"> {cart.length ? cart.length : null}</sup>
+          </NavLink>
         </div>
 
         <div className="div-E">
-          <Link className="link" to="/user">
+          <NavLink className="link" to="/signin">
             <FontAwesomeIcon icon={faUser} size="xl" />
-          </Link>
+          </NavLink>
         </div>
       </nav>
     </div>

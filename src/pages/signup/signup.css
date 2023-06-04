@@ -1,0 +1,71 @@
+.sign_up_div {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.sign_up_input_div1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.sign_up_div_input {
+  padding: 0.5rem;
+  border: 1.5px solid gray;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.sign_up_input_div2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sign_up_input {
+  width: 150%;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  border: 1.5px solid gray;
+  background: transparent;
+}
+
+.sign_up_input_below {
+  width: 20%;
+}
+
+.sign_in_no_AC {
+  margin-top: 0.5rem;
+  font-size: large;
+}
+.sign_up__div_btn {
+  width: 160%;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  color: whitesmoke;
+  display: inline-block;
+  border: 1.5px solid #b21368;
+  background-color: #b21368;
+}
+.sign_up__div_btn:active {
+  width: 120%;
+  color: #252525;
+  transition: 0.3s;
+  background-color: whitesmoke;
+}

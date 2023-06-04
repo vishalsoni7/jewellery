@@ -1,0 +1,78 @@
+.sign_in_div {
+  margin-top: 10rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.sign_in_heading {
+  font-size: x-large;
+  text-align: left;
+}
+.sign_in_input {
+  width: 15%;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  border: 1.5px solid gray;
+  background: transparent;
+}
+.sign_in_btn {
+  width: 15%;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  color: whitesmoke;
+  display: inline-block;
+  border: 1.5px solid #b21368;
+  background-color: #b21368;
+}
+.sign_in_btn:active {
+  width: 13%;
+  color: #252525;
+  transition: 0.3s;
+  background-color: whitesmoke;
+}
+
+.sign_in_as_guest_btn {
+  width: 15%;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  color: whitesmoke;
+  display: inline-block;
+  border: 1px solid #b21368;
+  background-color: #b21368;
+}
+
+.sign_in_as_guest_btn:active {
+  width: 13%;
+  color: #252525;
+  transition: 0.3s;
+  background-color: whitesmoke;
+}
+
+.sign_up_no_AC {
+  margin-top: 1.2rem;
+  font-size: large;
+}
+
+.guest {
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-size: large;
+}
+
+.guest:active {
+  transition: 0.3s;
+  font-size: medium;
+}
+
+.guest_color {
+  color: #b21368;
+}

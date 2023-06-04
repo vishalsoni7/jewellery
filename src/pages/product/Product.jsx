@@ -1,86 +1,96 @@
-import "../product/product.css";
-
+import { NavLink } from "react-router-dom";
 import React, { useContext } from "react";
+
+import "../product/product.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  faCartShopping,
+  faHeart,
+  faCartPlus,
+} from "@fortawesome/free-solid-svg-icons";
+
 import { DataContext } from "../../Context/DataContext";
 import { Filters } from "./FiterSection";
-import { Link } from "react-router-dom";
+import { Loader } from "../../component/loader";
+import { CartContext } from "../../Context/CartContext";
+import { WishListContext } from "../../Context/WishListContext";
 
 export const Product = () => {
-  const { isProduct } = useContext(DataContext);
+  const { addToCart, userToken, inCart } = useContext(CartContext);
+  const { addToWishlist, inWishlist } = useContext(WishListContext);
+  const { singleProduct } = useContext(DataContext);
+  const {
+    state: { filterData },
+  } = useContext(DataContext);
+
   return (
     <div>
       <Filters />
+      {filterData.length === 0 ? (
+        <Loader />
+      ) : (
+        <div className="products-maiDiv">
+          {filterData.map((item) => {
+            const { name, price, img, _id, weight } = item;
+            return (
+              <div key={_id} class="products-cart">
+                <NavLink
+                  to={`/product/{_id}`}
+                  onClick={() => singleProduct(_id)}
+                >
+                  <img className="products-img" src={img} alt="products" />
+                </NavLink>
+                <p>{name}</p>
+                <p className="products-cart-weight"> Weight : {weight}</p>
+                <p>₹ {price}</p>
 
-      <div className="product-maiDiv">
-        {isProduct.map((item) => {
-          const { name, price, img, id } = item;
+                <div className="btn-div">
+                  {inCart(_id) ? (
+                    <button className="products-cart-button1">
+                      <NavLink className="products-cart-link_button" to="/cart">
+                        <FontAwesomeIcon icon={faCartShopping} size="sm" /> Go
+                        to Cart
+                      </NavLink>{" "}
+                    </button>
+                  ) : (
+                    <button
+                      className="products-cart-button1"
+                      onClick={() => {
+                        addToCart(item, userToken);
+                      }}
+                    >
+                      <FontAwesomeIcon icon={faCartPlus} size="sm" /> Add to
+                      Cart
+                    </button>
+                  )}
 
-          return (
-            <div key={id} class="product-card">
-              <div class="product-image">
-                <Link to={`/product/${id}`}>
-                  {" "}
-                  <img src={img} alt="product" />
-                </Link>
+                  {inWishlist(_id) ? (
+                    <button className="products-cart-button2">
+                      <NavLink
+                        className="products-cart-link_button"
+                        to="/wishlist"
+                      >
+                        <FontAwesomeIcon icon={faHeart} size="sm" /> Go to
+                        Wishlist
+                      </NavLink>
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => addToWishlist(item, userToken)}
+                      className="products-cart-button2"
+                    >
+                      {" "}
+                      <FontAwesomeIcon icon={faHeart} size="sm" /> Ad to
+                      Wishlist
+                    </button>
+                  )}
+                </div>
               </div>
-
-              <span class="title">{name}</span>
-              <span class="price"> {price} </span>
-              <div>
-                {" "}
-                <button className="prod-button"> Add to cart </button>{" "}
-                <button className="prod-button"> Add to Wishlist </button>{" "}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };
-
-{
-  /* <h2 className="heading"> All products</h2>
-      <div className="product-cardLayout">
-        {mails.map((item) => (
-          <div className="product-card">
-            <img className="product-img" src="./landing_image.jpeg" alt="img" />
-            <h3>Product: {item.name} </h3>
-            <p> By: {item.by} </p>
-            <p> Price: {item.price} ₹</p>
-            <button className="card-button"> Add to Cart </button>
-          </div>
-        ))}
-      </div>
-
-// fetchdata from
-// fetch /api/products
-
-{
-  /* <div>
-{" "}
-<div className="product-maiDiv">
-  {mails.map((item) => {
-    const { name, price, img } = item;
-
-    return (
-      <div style={{ margin: "1rem" }} class="product-card">
-        <div class="product-image">
-          <img
-            src={img}
-            style={{
-              objectFit: "fill",
-              height: "245px",
-              width: "195px",
-            }}
-          />{" "}
-        </div>
-        <span class="title">{name}</span>
-        <span class="price"> {price} </span>
-      </div>
-    );
-  })}
-</div>{" "}
-<Footer />
-</div> */
-}

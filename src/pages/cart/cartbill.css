@@ -1,7 +1,62 @@
-* {
-  margin: 0;
-  padding: 0;
+.card_bill {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  margin-left: -10rem;
+  flex-direction: column;
+  text-align: left;
+  width: 18rem;
+  height: auto;
+  line-height: 2rem;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgb(236, 236, 236);
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.13), 0 1px 2px 0 rgba(0, 0, 0, 0.11);
 }
-ul {
-  list-style: none;
+
+.card_bill h2 {
+  text-align: center;
+  border-bottom: 1px solid gainsboro;
+}
+
+.cartbill_checkout_div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cartbill_checkout_div p {
+  font-size: large;
+}
+
+.bill_total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+  font-size: large;
+}
+
+.cart_bill_button {
+  display: inline-block;
+  padding: 0.6rem;
+  background-color: #18a558;
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  font-size: medium;
+  width: 100%;
+}
+
+.cart_bill_button:active {
+  transition: 0.3s;
+  box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.3);
+}
+
+.cartbill_dicsount {
+  word-spacing: 3px;
+  text-align: center;
+  color: #18a558;
+  font-size: larger;
 }

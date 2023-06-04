@@ -1,0 +1,21 @@
+.address_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  flex-direction: column;
+  border: 2px solid red;
+  width: 35rem;
+}
+
+.address_div input {
+  padding: 0.4rem;
+  width: 20rem;
+  border: 1.5px solid gainsboro;
+  border-radius: 5px;
+}
+
+/* .address_div input:hover {
+  border: 1.7px solid #b21368;
+} */

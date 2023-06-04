@@ -1,40 +1,28 @@
 html {
-  overflow-y: scroll;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
-.landing-container {
-  position: relative;
+.landing_parent_Div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .landing-mainDiv {
-  height: 100%;
+  text-align: left;
 }
 
 .landing-link {
   text-decoration: none;
   color: #252525;
 }
-.container {
-  padding: 40px 50px 0px 50px;
-  width: 100%;
-  overflow-x: hidden;
-}
-.landing-img {
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 600px;
-  box-shadow: 0 26px 58px 0 rgba(0, 0, 0, 0.22),
-    0 5px 14px 0 rgba(0, 0, 0, 0.18);
-}
 
 .category_container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 5rem;
-  padding-bottom: 3.5rem;
+  gap: 2rem;
+  padding-bottom: 3rem;
 }
 .category_container-child {
   width: 350px;
@@ -42,26 +30,29 @@ html {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12);
 }
 .category_container-child:hover {
-  box-sizing: border-box;
   transition: 0.3s;
   box-shadow: 0 26px 58px 0 rgba(0, 0, 0, 0.22),
     0 5px 14px 0 rgba(0, 0, 0, 0.18);
 }
+.heading_h1 {
+  padding-top: 2rem;
+  font-size: 32px;
+}
+
 .category-heading {
-  padding-top: 1rem;
+  padding-top: 2rem;
   font-size: 32px;
   transform: scale(1.2, 1.2);
 }
 .category-description {
+  margin-top: 1rem;
   font-size: large;
   padding-bottom: 40px;
 }
 
 .paragraph {
   margin: 2.5rem;
-  text-align: left;
 }
-h2 {
+.category_container-child h1 {
   padding-left: 2.5rem;
-  text-align: left;
 }

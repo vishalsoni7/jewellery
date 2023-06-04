@@ -1,0 +1,15 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 5rem auto;
+  color: #252525;
+}
+
+.error h1 h2 {
+  font-size: x-large;
+}
+
+.error_link {
+  color: #b21368;
+}
