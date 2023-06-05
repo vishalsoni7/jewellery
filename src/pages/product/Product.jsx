@@ -15,9 +15,12 @@ import { Filters } from "./FiterSection";
 import { Loader } from "../../component/loader";
 import { CartContext } from "../../Context/CartContext";
 import { WishListContext } from "../../Context/WishListContext";
+import { AuthContext } from "../../Context/AuthContext";
 
 export const Product = () => {
-  const { addToCart, userToken, inCart } = useContext(CartContext);
+  const { auth } = useContext(AuthContext);
+  const { userToken } = useContext(AuthContext);
+  const { addToCart, inCart } = useContext(CartContext);
   const { addToWishlist, inWishlist } = useContext(WishListContext);
   const { singleProduct } = useContext(DataContext);
   const {
@@ -36,7 +39,7 @@ export const Product = () => {
             return (
               <div key={_id} class="products-cart">
                 <NavLink
-                  to={`/product/{_id}`}
+                  to={`/product/${_id}`}
                   onClick={() => singleProduct(_id)}
                 >
                   <img className="products-img" src={img} alt="products" />
@@ -46,27 +49,11 @@ export const Product = () => {
                 <p>₹ {price}</p>
 
                 <div className="btn-div">
-                  {inCart(_id) ? (
-                    <button className="products-cart-button1">
-                      <NavLink className="products-cart-link_button" to="/cart">
-                        <FontAwesomeIcon icon={faCartShopping} size="sm" /> Go
-                        to Cart
-                      </NavLink>{" "}
-                    </button>
-                  ) : (
-                    <button
-                      className="products-cart-button1"
-                      onClick={() => {
-                        addToCart(item, userToken);
-                      }}
-                    >
-                      <FontAwesomeIcon icon={faCartPlus} size="sm" /> Add to
-                      Cart
-                    </button>
-                  )}
-
                   {inWishlist(_id) ? (
-                    <button className="products-cart-button2">
+                    <button
+                      disabled={!auth.isLoggedIn}
+                      className="products-cart-button2"
+                    >
                       <NavLink
                         className="products-cart-link_button"
                         to="/wishlist"
@@ -77,12 +64,35 @@ export const Product = () => {
                     </button>
                   ) : (
                     <button
+                      disabled={!auth.isLoggedIn}
                       onClick={() => addToWishlist(item, userToken)}
                       className="products-cart-button2"
                     >
                       {" "}
                       <FontAwesomeIcon icon={faHeart} size="sm" /> Ad to
                       Wishlist
+                    </button>
+                  )}
+                  {inCart(_id) ? (
+                    <button
+                      disabled={!auth.isLoggedIn}
+                      className="products-cart-button1"
+                    >
+                      <NavLink className="products-cart-link_button" to="/cart">
+                        <FontAwesomeIcon icon={faCartShopping} size="sm" /> Go
+                        to Cart
+                      </NavLink>{" "}
+                    </button>
+                  ) : (
+                    <button
+                      disabled={!auth.isLoggedIn}
+                      className="products-cart-button1"
+                      onClick={() => {
+                        addToCart(item, userToken);
+                      }}
+                    >
+                      <FontAwesomeIcon icon={faCartPlus} size="sm" /> Add to
+                      Cart
                     </button>
                   )}
                 </div>

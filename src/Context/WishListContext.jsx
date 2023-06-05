@@ -9,10 +9,9 @@ export const WishListContext = createContext();
 export const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
 
-  const userToken = localStorage.getItem("token");
-
   const addToWishlist = async (product, userToken) => {
     try {
+      console.log(userToken);
       const response = await axios.post(
         "/api/user/wishlist",
         {
@@ -24,6 +23,7 @@ export const WishlistProvider = ({ children }) => {
       );
       if (response.status === 201) {
         setWishlist(response.data.wishlist);
+
         toast.success("Item added to Wishlist.", {
           style: {
             fontSize: "large",
@@ -62,7 +62,6 @@ export const WishlistProvider = ({ children }) => {
   };
 
   const values = {
-    userToken,
     wishlist,
     addToWishlist,
     removeFromWishlist,

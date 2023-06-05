@@ -50,7 +50,7 @@
   border: none;
   background-color: #b21368;
   color: whitesmoke;
-  border-radius: 0px 0px 0px 8px;
+  border-radius: 0px 0px 8px 0px;
 }
 
 .products-cart-link_button {
@@ -64,7 +64,7 @@
   border: none;
   background-color: #b21368;
   color: whitesmoke;
-  border-radius: 0px 0px 8px 0px;
+  border-radius: 0px 0px 0px 8px;
 }
 
 .products-cart button:active {

@@ -1,0 +1,25 @@
+.user_div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 5rem;
+  line-height: 2rem;
+}
+
+.user_img {
+  height: 10rem;
+  width: 10rem;
+  margin: 1rem;
+}
+
+.user_button {
+  margin: 0.5rem;
+  width: 8rem;
+  height: 1.5rem;
+  border-radius: 5px;
+  font-size: medium;
+  cursor: pointer;
+  background: none;
+  border: 1.5px solid #b21368;
+}

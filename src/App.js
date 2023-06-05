@@ -1,7 +1,6 @@
 import React from "react";
-
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import "./App.css";
 
 import { Landing } from "./landing/Landing";
 import Mockman from "mockman-js";
@@ -17,6 +16,7 @@ import { Error } from "./pages/Error/Error";
 import { CheckOut } from "./pages/ckeckout/Checkout";
 import { AddressForm } from "./utils/AddressForm";
 import RequireAuth from "./utils/RequireAuth";
+import { User } from "./pages/user/Profile";
 
 function App() {
   return (
@@ -49,11 +49,11 @@ function App() {
           path="/checkout"
           element={
             <RequireAuth>
-              {" "}
               <CheckOut />
             </RequireAuth>
           }
         />
+        <Route path="/user" element={<User />} />
         <Route path="/address" element={<AddressForm />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />

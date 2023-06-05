@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { AddressContext } from "../../Context/AddressContext";
 import { CartContext } from "../../Context/CartContext";
 
 import "../ckeckout/checkout.css";
@@ -11,9 +12,21 @@ export const CheckOut = () => {
     itemsInCart,
     cart,
   } = useContext(CartContext);
+  const { addedUser, removeAddress } = useContext(AddressContext);
   return (
     <div>
-      {" "}
+      <div>
+        {" "}
+        {addedUser.map((item) => (
+          <div>
+            {" "}
+            <p> {item.fullName} </p>
+            <button onClick={() => removeAddress(item)} type="button">
+              Remove Address
+            </button>{" "}
+          </div>
+        ))}
+      </div>
       <h2>Check Out </h2>{" "}
       <div className="checkout_parent_div">
         <div className="checkout_cart_div">
