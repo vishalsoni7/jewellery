@@ -9,7 +9,7 @@ import "../wishlist/wishlist.css";
 export const WishList = () => {
   const { userToken } = useContext(AuthContext);
   const { wishlist, removeFromWishlist } = useContext(WishListContext);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, inCart } = useContext(CartContext);
 
   return (
     <div>
@@ -33,7 +33,10 @@ export const WishList = () => {
                     <p> Price: {price} ₹</p>
                     <p> Weight: {weight} </p>
                     <button
-                      onClick={() => addToCart(item, userToken)}
+                      onClick={() => {
+                        addToCart(item, userToken);
+                        removeFromWishlist(_id, userToken);
+                      }}
                       className="wishlist-btn"
                     >
                       {" "}

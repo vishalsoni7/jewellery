@@ -20,7 +20,7 @@ import { AuthContext } from "../../Context/AuthContext";
 export const Product = () => {
   const { auth } = useContext(AuthContext);
   const { userToken } = useContext(AuthContext);
-  const { addToCart, inCart } = useContext(CartContext);
+  const { addToCart, inCart, handleQnty } = useContext(CartContext);
   const { addToWishlist, inWishlist } = useContext(WishListContext);
   const { singleProduct } = useContext(DataContext);
   const {
@@ -37,7 +37,7 @@ export const Product = () => {
           {filterData.map((item) => {
             const { name, price, img, _id, weight } = item;
             return (
-              <div key={_id} class="products-cart">
+              <div key={_id} className="products-cart">
                 <NavLink
                   to={`/product/${_id}`}
                   onClick={() => singleProduct(_id)}
@@ -69,8 +69,7 @@ export const Product = () => {
                       className="products-cart-button2"
                     >
                       {" "}
-                      <FontAwesomeIcon icon={faHeart} size="sm" /> Ad to
-                      Wishlist
+                      Add to Wishlist
                     </button>
                   )}
                   {inCart(_id) ? (
@@ -88,11 +87,13 @@ export const Product = () => {
                       disabled={!auth.isLoggedIn}
                       className="products-cart-button1"
                       onClick={() => {
-                        addToCart(item, userToken);
+                        inCart(_id)
+                          ? handleQnty("increment", _id, userToken)
+                          : addToCart(item, userToken);
                       }}
                     >
-                      <FontAwesomeIcon icon={faCartPlus} size="sm" /> Add to
-                      Cart
+                      {" "}
+                      Add to Cart
                     </button>
                   )}
                 </div>

@@ -14,7 +14,7 @@
 }
 
 .user_button {
-  margin: 0.5rem;
+  margin: 0.3rem;
   width: 8rem;
   height: 1.5rem;
   border-radius: 5px;
@@ -22,4 +22,18 @@
   cursor: pointer;
   background: none;
   border: 1.5px solid #b21368;
+}
+
+.user_button:hover {
+  transition: 0.3s;
+  background-color: #b21368;
+  color: whitesmoke;
+}
+
+.user_link {
+  color: #252525;
+  text-decoration: none;
+}
+.user_link:hover {
+  color: whitesmoke;
 }

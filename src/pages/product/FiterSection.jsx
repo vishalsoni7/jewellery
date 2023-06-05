@@ -16,7 +16,7 @@ export const Filters = () => {
         <h4>Filters</h4>
         <button
           onClick={() => dispatch({ type: "CLEAR" })}
-          class="filter-button"
+          className="filter-button"
         >
           Clear
         </button>
