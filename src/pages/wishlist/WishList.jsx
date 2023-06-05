@@ -9,7 +9,7 @@ import "../wishlist/wishlist.css";
 export const WishList = () => {
   const { userToken } = useContext(AuthContext);
   const { wishlist, removeFromWishlist } = useContext(WishListContext);
-  const { addToCart, inCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div>
