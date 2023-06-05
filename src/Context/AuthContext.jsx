@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import axios from "axios";
 
 import toast from "react-hot-toast";
@@ -6,7 +6,6 @@ import toast from "react-hot-toast";
 import { createContext, useReducer, useState } from "react";
 import { AuthReducer } from "../Reducer/AuthReducer";
 import { useNavigate } from "react-router-dom";
-// import { CartContext } from "./CartContext";
 
 export const AuthContext = createContext();
 
@@ -63,7 +62,7 @@ export const AuthProvider = ({ children }) => {
         email,
         password,
       });
-      console.log(data);
+
       if (status === 200) {
         authDispatch({ type: "HANDLE_SIGN_IN", payload: true });
         localStorage.setItem(

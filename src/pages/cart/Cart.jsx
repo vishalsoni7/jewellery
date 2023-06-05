@@ -57,7 +57,10 @@ export const Cart = () => {
                       <div>
                         {" "}
                         <button
-                          onClick={() => addToWishlist(item, userToken)}
+                          onClick={() => {
+                            addToWishlist(item, userToken);
+                            removeFromCart(_id, userToken);
+                          }}
                           className="mycart-btn"
                         >
                           {" "}

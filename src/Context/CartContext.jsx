@@ -43,7 +43,7 @@ export const CartProvider = ({ children }) => {
         headers: { authorization: userToken },
       });
       setCart(response.data.cart);
-      toast.error("Item removed!", {
+      toast.error("Item removed from cart!", {
         style: {
           fontSize: "large",
           padding: ".5rem",

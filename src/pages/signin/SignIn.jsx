@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { InnerFooter } from "../../component/InnerFooter";
 import { AuthContext } from "../../Context/AuthContext";
+import { User } from "../user/Profile";
 
 import "./signin.css";
 
@@ -11,11 +12,11 @@ export const SignIn = () => {
   const {
     userSignIn,
     auth,
-    signOut,
+    // signOut,
     guestSignin,
     userDetails,
     setUserDetails,
-    userToken,
+    // userToken,
   } = useContext(AuthContext);
   if (auth.isLoggedIn) {
     navigate("/");
@@ -25,7 +26,7 @@ export const SignIn = () => {
     <div>
       {auth.isLoggedIn ? (
         <div>
-          <button onClick={signOut}> Sign Out</button>{" "}
+          <User />
         </div>
       ) : (
         <div className="sign_in_div">
