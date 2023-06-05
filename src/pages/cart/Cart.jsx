@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
+
 import { InnerFooter } from "../../component/InnerFooter";
+import { AuthContext } from "../../Context/AuthContext";
 import { CartContext } from "../../Context/CartContext";
 import { WishListContext } from "../../Context/WishListContext";
 
@@ -8,10 +10,9 @@ import "../cart/cart.css";
 import { CartBill } from "./CartBill";
 
 export const Cart = () => {
+  const { userToken } = useContext(AuthContext);
   const { addToWishlist } = useContext(WishListContext);
-  const { cart, removeFromCart, userToken, handleQnty } = useContext(
-    CartContext
-  );
+  const { cart, removeFromCart, handleQnty } = useContext(CartContext);
   return (
     <div
       style={{
@@ -60,7 +61,7 @@ export const Cart = () => {
                           className="mycart-btn"
                         >
                           {" "}
-                          Move to Wish list{" "}
+                          Move to Wishlist{" "}
                         </button>
                         <button
                           onClick={() => removeFromCart(_id, userToken)}

@@ -1,14 +1,14 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import axios from "axios";
 
 import toast, { Toaster } from "react-hot-toast";
+import { AuthContext } from "./AuthContext";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-
-  const userToken = localStorage.getItem("token");
+  const { userToken } = useContext(AuthContext);
 
   const addToCart = async (product, userToken) => {
     try {
@@ -56,7 +56,8 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const handleQnty = async (type, productId, userToken) => {
+  const handleQnty = async (type, productId) => {
+    console.log(userToken);
     try {
       const response = await axios.post(
         `/api/user/cart/${productId}`,
@@ -77,7 +78,7 @@ export const CartProvider = ({ children }) => {
     return cart.find((item) => item.id === productId);
   };
 
-  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+  const totalPrice = cart.reduce((acc, curr) => acc + curr.price * curr.qty, 0);
 
   const discount = totalPrice * (10 / 100);
 
@@ -95,7 +96,6 @@ export const CartProvider = ({ children }) => {
   const values = {
     cart,
     addToCart,
-    userToken,
     removeFromCart,
     handleQnty,
     inCart,
@@ -107,7 +107,7 @@ export const CartProvider = ({ children }) => {
   return (
     <>
       <CartContext.Provider value={values}> {children} </CartContext.Provider>{" "}
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster position="bottom-right" reverseOrder={false} />
     </>
   );
 };

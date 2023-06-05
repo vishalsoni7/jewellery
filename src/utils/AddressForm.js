@@ -1,49 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 
 import "../utils/address.css";
 
+import { AddressContext } from "../Context/AddressContext";
+
 export const AddressForm = () => {
-  const [user, setUser] = useState({
-    id: "",
-    fullName: "",
-    mobileNumber: "",
-    houseNumber: "",
-    area: "",
-    pincode: "",
-    city: "",
-  });
-  const [addedUser, setAddedUser] = useState([]);
-
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    setUser({ ...user, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newRecord = { ...user, id: new Date().getTime().toString() };
-    setAddedUser([...addedUser, newRecord]);
-  };
-
-  const removeAddress = (address) => {
-    const filteredAddress = addedUser.filter((add) => {
-      return add.id !== address.id;
-    });
-    setAddedUser(filteredAddress);
-  };
-
-  useEffect(() => {
-    console.log(addedUser);
-  }, [addedUser]);
-
+  const { user, handleInput, handleSubmit } = useContext(AddressContext);
   return (
     <div
       style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        flexDirection: "column",
       }}
     >
+      <h3> Add New Address </h3>
       <form onSubmit={handleSubmit}>
         <div className="address_div">
           <div>
@@ -51,7 +23,6 @@ export const AddressForm = () => {
               required
               placeholder="Full Name"
               type="text"
-              autoComplete="off"
               value={user.fullName}
               onChange={handleInput}
               name="fullName"
@@ -63,7 +34,6 @@ export const AddressForm = () => {
               required
               placeholder="Mobile Number"
               type="tel"
-              autoComplete="off"
               value={user.mobileNumber}
               onChange={handleInput}
               name="mobileNumber"
@@ -75,7 +45,6 @@ export const AddressForm = () => {
               required
               placeholder="House Number"
               type="text"
-              autoComplete="off"
               onChange={handleInput}
               value={user.houseNumber}
               name="houseNumber"
@@ -87,7 +56,6 @@ export const AddressForm = () => {
               required
               placeholder="Area"
               type="text"
-              autoComplete="off"
               value={user.area}
               onChange={handleInput}
               name="area"
@@ -99,7 +67,6 @@ export const AddressForm = () => {
               required
               placeholder="Pincode"
               type="tel"
-              autoComplete="off"
               value={user.pincode}
               onChange={handleInput}
               name="pincode"
@@ -111,7 +78,6 @@ export const AddressForm = () => {
               required
               placeholder="City"
               type="text"
-              autoComplete="off"
               value={user.city}
               onChange={handleInput}
               name="city"
@@ -121,18 +87,6 @@ export const AddressForm = () => {
           <button type="submit">Add address</button>{" "}
         </div>
       </form>
-      <div>
-        {addedUser.map((item) => (
-          <div>
-            <ul>
-              <li> {item.fullName} </li>{" "}
-            </ul>
-            <button onClick={() => removeAddress(item)} type="button">
-              Remove Address
-            </button>{" "}
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

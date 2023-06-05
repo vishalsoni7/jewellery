@@ -6,6 +6,12 @@ export const AuthReducer = (authState, action) => {
         isLoggedIn: action.payload,
       };
     }
+    case "HANDLE_SIGN_OUT": {
+      return {
+        ...authState,
+        isLoggedIn: action.payload,
+      };
+    }
     default: {
       return authState;
     }

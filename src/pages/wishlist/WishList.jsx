@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import { InnerFooter } from "../../component/InnerFooter";
+import { AuthContext } from "../../Context/AuthContext";
 import { CartContext } from "../../Context/CartContext";
 import { WishListContext } from "../../Context/WishListContext";
 
 import "../wishlist/wishlist.css";
 
 export const WishList = () => {
-  const { wishlist, removeFromWishlist, userToken } = useContext(
-    WishListContext
-  );
-
+  const { userToken } = useContext(AuthContext);
+  const { wishlist, removeFromWishlist } = useContext(WishListContext);
   const { addToCart } = useContext(CartContext);
+
   return (
     <div>
       <div className="wishlist-mainDiv">

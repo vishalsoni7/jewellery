@@ -58,7 +58,7 @@ export const Nevigation = () => {
         </div>
 
         <div className="div-E">
-          <NavLink className="link" to="/signin">
+          <NavLink className="link" to="/user">
             <FontAwesomeIcon icon={faUser} size="xl" />
           </NavLink>
         </div>

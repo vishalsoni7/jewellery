@@ -9,6 +9,7 @@ import { Categories } from "./Context/DataContext";
 import { AuthProvider } from "./Context/AuthContext";
 import { CartProvider } from "./Context/CartContext";
 import { WishlistProvider } from "./Context/WishListContext";
+import { AddressProvider } from "./Context/AddressContext";
 
 // Call make Server
 makeServer();
@@ -22,7 +23,9 @@ root.render(
         <AuthProvider>
           <CartProvider>
             <WishlistProvider>
-              <App />
+              <AddressProvider>
+                <App />
+              </AddressProvider>
             </WishlistProvider>
           </CartProvider>
         </AuthProvider>
