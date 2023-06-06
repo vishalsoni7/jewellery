@@ -9,12 +9,25 @@ export const AddressForm = () => {
     user,
     handleInput,
     handleSubmit,
-    addedUser,
-    removeAddress,
+    // addedUser,
+    // removeAddress,
   } = useContext(AddressContext);
   return (
     <>
-      <h2> Add new address </h2>
+      {" "}
+      <h2
+        style={{
+          color: "white",
+          margin: "1rem",
+          backgroundColor: "whitesmoke",
+          color: "#252525",
+          borderRadius: "5px",
+          width: "50%",
+        }}
+      >
+        {" "}
+        ADD NEW ADDRESS
+      </h2>
       <div
         style={{
           display: "flex",
@@ -95,7 +108,7 @@ export const AddressForm = () => {
             </div>
           </form>
         </div>{" "}
-        <div>
+        {/* <div>
           {" "}
           {addedUser.map((item) => (
             <div
@@ -120,7 +133,7 @@ export const AddressForm = () => {
               </button>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>{" "}
     </>
   );

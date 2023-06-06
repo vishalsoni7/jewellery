@@ -73,6 +73,11 @@
   cursor: pointer;
 }
 
+.wishlist_link {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
 .remove-wishlist-btn:active {
   font-size: small;
   color: red;

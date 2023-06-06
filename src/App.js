@@ -54,7 +54,7 @@ function App() {
           }
         />
         <Route path="/user" element={<User />} />
-        <Route path="/address" element={<AddressForm />} />
+        {/* <Route path="/address" element={<AddressForm />} /> */}
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="*" element={<Error />} />

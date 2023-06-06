@@ -5,7 +5,8 @@
   gap: 1rem;
   padding: 1rem;
   flex-direction: column;
-  border: 2px solid red;
+  border: 1.5px solid gainsboro;
+  border-radius: 5px;
   width: 25rem;
 }
 
