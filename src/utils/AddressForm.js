@@ -17,7 +17,6 @@ export const AddressForm = () => {
       {" "}
       <h2
         style={{
-          color: "white",
           margin: "1rem",
           backgroundColor: "whitesmoke",
           color: "#252525",

@@ -1,17 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { AddressContext } from "../../Context/AddressContext";
 import { CartContext } from "../../Context/CartContext";
 
 import "../ckeckout/checkout.css";
 
 export const CheckOut = () => {
-  const {
-    totalPrice,
-    discount,
-    discountedPrice,
-    itemsInCart,
-    cart,
-  } = useContext(CartContext);
+  const { totalPrice, discount, discountedPrice, itemsInCart, cart } =
+    useContext(CartContext);
   const { addedUser } = useContext(AddressContext);
   // const [selectedAdd, setSelectedAdd] = useState();
 

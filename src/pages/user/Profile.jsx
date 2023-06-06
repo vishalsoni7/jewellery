@@ -70,10 +70,3 @@ export const User = () => {
     </div>
   );
 };
-
-{
-  /* <NavLink className="user_link" to="/address">
-                {" "}
-                Address{" "}
-              </NavLink>{" "} */
-}

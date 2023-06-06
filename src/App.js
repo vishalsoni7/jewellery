@@ -14,7 +14,7 @@ import { SignIn } from "./pages/signin/SignIn";
 import { SignUp } from "./pages/signup/SignUp";
 import { Error } from "./pages/Error/Error";
 import { CheckOut } from "./pages/ckeckout/Checkout";
-import { AddressForm } from "./utils/AddressForm";
+
 import RequireAuth from "./utils/RequireAuth";
 import { User } from "./pages/user/Profile";
 
@@ -54,7 +54,6 @@ function App() {
           }
         />
         <Route path="/user" element={<User />} />
-        {/* <Route path="/address" element={<AddressForm />} /> */}
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="*" element={<Error />} />
