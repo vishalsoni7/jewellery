@@ -4,11 +4,7 @@ import React, { useContext } from "react";
 import "../product/product.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import {
-  faCartShopping,
-  faHeart,
-  faCartPlus,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import { DataContext } from "../../Context/DataContext";
 import { Filters } from "./FiterSection";
@@ -20,7 +16,7 @@ import { AuthContext } from "../../Context/AuthContext";
 export const Product = () => {
   const { auth } = useContext(AuthContext);
   const { userToken } = useContext(AuthContext);
-  const { addToCart, inCart, handleQnty } = useContext(CartContext);
+  const { addToCart, inCart } = useContext(CartContext);
   const { addToWishlist, inWishlist } = useContext(WishListContext);
   const { singleProduct } = useContext(DataContext);
   const {
@@ -86,11 +82,7 @@ export const Product = () => {
                     <button
                       disabled={!auth.isLoggedIn}
                       className="products-cart-button1"
-                      onClick={() => {
-                        inCart(_id)
-                          ? handleQnty("increment", _id, userToken)
-                          : addToCart(item, userToken);
-                      }}
+                      onClick={() => addToCart(item, userToken)}
                     >
                       {" "}
                       Add to Cart

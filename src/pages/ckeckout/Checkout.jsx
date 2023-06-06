@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AddressContext } from "../../Context/AddressContext";
 import { CartContext } from "../../Context/CartContext";
 
@@ -12,18 +12,17 @@ export const CheckOut = () => {
     itemsInCart,
     cart,
   } = useContext(CartContext);
-  const { addedUser, removeAddress } = useContext(AddressContext);
+  const { addedUser } = useContext(AddressContext);
+  const [selectedAdd, setSelectedAdd] = useState();
+
   return (
     <div>
       <div>
         {" "}
-        {addedUser.map((item) => (
+        {addedUser.map((item, index) => (
           <div>
-            {" "}
+            <input name="address" type="radio" />
             <p> {item.fullName} </p>
-            <button onClick={() => removeAddress(item)} type="button">
-              Remove Address
-            </button>{" "}
           </div>
         ))}
       </div>

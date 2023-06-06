@@ -25,7 +25,7 @@ export const Nevigation = () => {
       <nav className="navBar">
         <div className="div-A">
           <NavLink to="/" className="link">
-            <h1 className="heading"> Jwels </h1>
+            <h1 className="heading"> Jewels </h1>
           </NavLink>
         </div>
 

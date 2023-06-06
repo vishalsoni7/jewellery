@@ -64,7 +64,7 @@ export const SignIn = () => {
         </div>
       )}
 
-      <InnerFooter />
+      {!auth.isLoggedIn && <InnerFooter />}
     </div>
   );
 };
