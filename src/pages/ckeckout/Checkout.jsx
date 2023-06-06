@@ -13,7 +13,7 @@ export const CheckOut = () => {
     cart,
   } = useContext(CartContext);
   const { addedUser } = useContext(AddressContext);
-  const [selectedAdd, setSelectedAdd] = useState();
+  // const [selectedAdd, setSelectedAdd] = useState();
 
   return (
     <div>
