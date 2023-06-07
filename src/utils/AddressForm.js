@@ -4,36 +4,14 @@ import "../utils/address.css";
 
 import { AddressContext } from "../Context/AddressContext";
 
-export const AddressForm = () => {
-  const {
-    user,
-    handleInput,
-    handleSubmit,
-    // addedUser,
-    // removeAddress,
-  } = useContext(AddressContext);
+export const AddressForm = ({ edit }) => {
+  const { user, handleInput, handleSubmit } = useContext(AddressContext);
   return (
     <>
       {" "}
-      <h2
-        style={{
-          margin: "1rem",
-          backgroundColor: "whitesmoke",
-          color: "#252525",
-          borderRadius: "5px",
-          width: "50%",
-        }}
-      >
+      <div className="address_parent_div">
         {" "}
-        ADD NEW ADDRESS
-      </h2>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+        <h2 className="address_heading"> ADD NEW ADDRESS</h2>
         <div>
           <form onSubmit={handleSubmit}>
             <div className="address_div">
@@ -84,17 +62,6 @@ export const AddressForm = () => {
               <div>
                 <input
                   required
-                  placeholder="Pincode"
-                  type="tel"
-                  value={user.pincode}
-                  onChange={handleInput}
-                  name="pincode"
-                  id="pincode"
-                />
-              </div>
-              <div>
-                <input
-                  required
                   placeholder="City"
                   type="text"
                   value={user.city}
@@ -103,37 +70,32 @@ export const AddressForm = () => {
                   id="city"
                 />
               </div>
-              <button type="submit">Add address</button>{" "}
+              <div>
+                <input
+                  required
+                  placeholder="Pincode"
+                  type="tel"
+                  value={user.pincode}
+                  onChange={handleInput}
+                  name="pincode"
+                  id="pincode"
+                />
+              </div>
+
+              {!edit ? (
+                <button className="address_btn" type="submit">
+                  {" "}
+                  Update Address
+                </button>
+              ) : (
+                <button className="address_btn" type="submit">
+                  Add Address
+                </button>
+              )}
             </div>
           </form>
-        </div>{" "}
-        {/* <div>
-          {" "}
-          {addedUser.map((item) => (
-            <div
-              style={{
-                border: "2px solid red",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-                width: "35rem",
-              }}
-            >
-              <p> {item.fullName} </p>
-              <p> {item.houseNumber} </p>
-              <p> {item.area} </p>
-              <p> {item.pincode} </p>
-              <p> {item.city} </p>
-              <p> {item.mobileNumber} </p>
-              <button onClick={() => removeAddress(item)}>
-                {" "}
-                Remove Address{" "}
-              </button>
-            </div>
-          ))}
-        </div> */}
-      </div>{" "}
+        </div>
+      </div>
     </>
   );
 };

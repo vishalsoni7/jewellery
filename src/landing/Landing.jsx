@@ -7,7 +7,6 @@ import { useContext } from "react";
 import { DataContext } from "../Context/DataContext";
 import { SlideShow } from "../component/SlideShow.jsx";
 import { Footer } from "../component/Footer";
-import { Loader } from "../component/loader";
 
 export const Landing = () => {
   const {
@@ -27,43 +26,39 @@ export const Landing = () => {
           ensuring there's something exquisite for every taste.
         </p>
       </div>
-      {category.length === 0 ? (
-        <Loader />
-      ) : (
-        <div className="landing_parent_Div">
-          {" "}
-          {category.map((item) => {
-            const { description, categoryName, _id } = item;
+      <div className="landing_parent_Div">
+        {" "}
+        {category.map((item) => {
+          const { description, categoryName, _id } = item;
 
-            return (
-              <div key={_id}>
-                {" "}
-                <div className="landing-container">
-                  <div className="landing-mainDiv">
-                    <div className="category_container">
-                      <div className="category_container-child">
-                        <Link
-                          onClick={() =>
-                            dispatch({
-                              type: "TOGGLE_SELECTED_CATEGORY",
-                              payload: categoryName,
-                            })
-                          }
-                          to="/products"
-                          className="landing-link"
-                        >
-                          <p className="paragraph">{description}</p>
-                          <h1> {categoryName} </h1>
-                        </Link>
-                      </div>
+          return (
+            <div key={_id}>
+              {" "}
+              <div className="landing-container">
+                <div className="landing-mainDiv">
+                  <div className="category_container">
+                    <div className="category_container-child">
+                      <Link
+                        onClick={() =>
+                          dispatch({
+                            type: "TOGGLE_SELECTED_CATEGORY",
+                            payload: categoryName,
+                          })
+                        }
+                        to="/products"
+                        className="landing-link"
+                      >
+                        <p className="paragraph">{description}</p>
+                        <h1> {categoryName} </h1>
+                      </Link>
                     </div>
                   </div>
-                </div>{" "}
-              </div>
-            );
-          })}{" "}
-        </div>
-      )}{" "}
+                </div>
+              </div>{" "}
+            </div>
+          );
+        })}{" "}
+      </div>
       <Footer />
     </div>
   );

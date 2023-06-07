@@ -6,16 +6,33 @@ export const AddressContext = createContext();
 
 export const AddressProvider = ({ children }) => {
   const [user, setUser] = useState({
-    id: "",
     fullName: "",
     mobileNumber: "",
     houseNumber: "",
     area: "",
-    pincode: "",
     city: "",
+    pincode: "",
   });
 
   const [addedUser, setAddedUser] = useState([]);
+
+  const [isAddressModal, setIsAddressModal] = useState(false);
+
+  const [selectedAddress, setSelectedAddress] = useState(0);
+
+  const orderAddress = addedUser[selectedAddress];
+
+  const handleAddressSelect = (index) => {
+    setSelectedAddress(index);
+  };
+
+  const handleEditAddress = (index) => {
+    const clickedAddress = addedUser[index];
+    setAddedUser(addedUser.filter((_, i) => i !== index));
+    setSelectedAddress(0);
+    setUser(clickedAddress);
+    setIsAddressModal(true);
+  };
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -26,9 +43,19 @@ export const AddressProvider = ({ children }) => {
     e.preventDefault();
     const newRecord = { ...user, id: new Date().getTime().toString() };
     setAddedUser([...addedUser, newRecord]);
+    setUser({
+      id: "",
+      fullName: "",
+      mobileNumber: "",
+      houseNumber: "",
+      area: "",
+      city: "",
+      pincode: "",
+    });
+    setIsAddressModal(false);
   };
 
-  const removeAddress = (address) => {
+  const deleteAddress = (address) => {
     const filteredAddress = addedUser.filter((add) => {
       return add.id !== address.id;
     });
@@ -44,7 +71,13 @@ export const AddressProvider = ({ children }) => {
     handleInput,
     handleSubmit,
     setAddedUser,
-    removeAddress,
+    deleteAddress,
+    isAddressModal,
+    setIsAddressModal,
+    handleEditAddress,
+    handleAddressSelect,
+    orderAddress,
+    selectedAddress,
   };
   return (
     <AddressContext.Provider value={values}>{children}</AddressContext.Provider>

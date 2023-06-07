@@ -9,10 +9,11 @@ import { User } from "../user/Profile";
 export const SignUp = () => {
   const {
     auth,
-    // signOut,
     signUpUserDetail,
     setSignUpUserDetail,
-    userSigUpHandle,
+    handleCreateAccount,
+    isPswrd,
+    pswrdVisible,
   } = useContext(AuthContext);
 
   return (
@@ -36,7 +37,6 @@ export const SignUp = () => {
                   })
                 }
                 className="sign_up_div_input"
-                required
                 placeholder="Firstname"
                 type="text"
               />
@@ -48,7 +48,6 @@ export const SignUp = () => {
                   })
                 }
                 className="sign_up_div_input"
-                required
                 placeholder="Lastname"
                 type="text"
               />{" "}
@@ -56,7 +55,6 @@ export const SignUp = () => {
             <div className="sign_up_input_div2">
               {" "}
               <input
-                required
                 onChange={(e) =>
                   setSignUpUserDetail({
                     ...signUpUserDetail,
@@ -67,18 +65,32 @@ export const SignUp = () => {
                 placeholder="Email"
                 type="email"
               />
-              <input
-                onChange={(e) =>
-                  setSignUpUserDetail({
-                    ...signUpUserDetail,
-                    password: e.target.value,
-                  })
-                }
-                className="sign_up_input"
-                required
-                placeholder="Password"
-                type="password"
-              />
+              <>
+                {" "}
+                <input
+                  onChange={(e) =>
+                    setSignUpUserDetail({
+                      ...signUpUserDetail,
+                      password: e.target.value,
+                    })
+                  }
+                  className="sign_up_input"
+                  placeholder="Password"
+                  type="password"
+                />{" "}
+                <span
+                  style={{
+                    cursor: "pointer",
+                    position: "absolute",
+                    top: "46.5%",
+                    marginLeft: "20rem",
+                  }}
+                  type="button"
+                  onClick={pswrdVisible}
+                >
+                  {isPswrd ? "Hide" : "Show"}
+                </span>{" "}
+              </>
               <input
                 onChange={(e) =>
                   setSignUpUserDetail({
@@ -87,11 +99,13 @@ export const SignUp = () => {
                   })
                 }
                 className="sign_up_input"
-                required
                 placeholder="Confirm password"
                 type="password"
               />
-              <button className="sign_up__div_btn" onClick={userSigUpHandle}>
+              <button
+                onClick={handleCreateAccount}
+                className="sign_up__div_btn"
+              >
                 Submit
               </button>
               <p className="sign_in_no_AC">

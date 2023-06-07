@@ -5,18 +5,45 @@
   gap: 1rem;
   padding: 1rem;
   flex-direction: column;
-  border: 1.5px solid gainsboro;
   border-radius: 5px;
   width: 25rem;
 }
 
 .address_div input {
   padding: 0.4rem;
+  background-color: whitesmoke;
   width: 20rem;
   border: 1.5px solid gainsboro;
   border-radius: 5px;
 }
 
-/* .address_div input:hover {
-  border: 1.7px solid #b21368;
-} */
+.address_parent_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.address_heading {
+  margin: 1rem;
+  color: white;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.address_btn {
+  margin: 0.3rem;
+  width: 8rem;
+  height: 1.5rem;
+  border-radius: 5px;
+  font-size: medium;
+  cursor: pointer;
+  background: none;
+  color: whitesmoke;
+  border: 1.5px solid whitesmoke;
+}
+
+.address_btn:active {
+  transition: 0.3s;
+  font-size: small;
+}

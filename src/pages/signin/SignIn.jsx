@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { InnerFooter } from "../../component/InnerFooter";
 import { AuthContext } from "../../Context/AuthContext";
 import { User } from "../user/Profile";
@@ -8,19 +8,15 @@ import { User } from "../user/Profile";
 import "./signin.css";
 
 export const SignIn = () => {
-  const navigate = useNavigate();
   const {
-    userSignIn,
     auth,
-    // signOut,
     guestSignin,
     userDetails,
     setUserDetails,
-    // userToken,
+    handleLogInFormSubmit,
+    isPswrd,
+    pswrdVisible,
   } = useContext(AuthContext);
-  if (auth.isLoggedIn) {
-    navigate("/");
-  }
 
   return (
     <div>
@@ -32,7 +28,6 @@ export const SignIn = () => {
         <div className="sign_in_div">
           <p className="sign_in_heading">Sign in </p>{" "}
           <input
-            required
             className="sign_in_input"
             onChange={(e) =>
               setUserDetails({ ...userDetails, email: e.target.value })
@@ -40,16 +35,25 @@ export const SignIn = () => {
             type="email"
             placeholder="Enter email"
           />
-          <input
-            required
-            className="sign_in_input"
-            onChange={(e) =>
-              setUserDetails({ ...userDetails, password: e.target.value })
-            }
-            type="password"
-            placeholder="Enter password"
-          />
-          <button className="sign_in_btn" onClick={userSignIn}>
+          <div className="password-container">
+            {" "}
+            <input
+              className="sign_in_input passwordInput"
+              onChange={(e) =>
+                setUserDetails({ ...userDetails, password: e.target.value })
+              }
+              type={isPswrd ? "text" : "password"}
+              placeholder="Enter password"
+            />
+            <span
+              className="passwordToggle"
+              type="button"
+              onClick={pswrdVisible}
+            >
+              {isPswrd ? "Hide" : "Show"}
+            </span>{" "}
+          </div>
+          <button className="sign_in_btn" onClick={handleLogInFormSubmit}>
             Sign In
           </button>
           <p className="sign_up_no_AC">

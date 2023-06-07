@@ -87,9 +87,9 @@ export const CartProvider = ({ children }) => {
   const itemsInCart = cart.reduce((acc, curr) => {
     const currentValue = curr.name;
     if (!acc[currentValue]) {
-      return { ...acc, [currentValue]: 1 };
+      return { ...acc, [currentValue]: 1 * curr.qty };
     } else {
-      return { ...acc, [currentValue]: acc[currentValue] + 1 };
+      return { ...acc, [currentValue]: acc[currentValue] + 1 * curr.qty };
     }
   }, {});
 

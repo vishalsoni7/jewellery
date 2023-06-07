@@ -32,7 +32,13 @@ export const AuthProvider = ({ children }) => {
   const [userToken, setUserToken] = useState(
     localStorage.getItem("token") || ""
   );
-  //name to be correct
+
+  const [isPswrd, setIsPswrd] = useState(false);
+
+  const pswrdVisible = () => {
+    setIsPswrd(!isPswrd);
+  };
+
   const userSigUpHandle = async () => {
     try {
       const {
@@ -94,6 +100,7 @@ export const AuthProvider = ({ children }) => {
           JSON.stringify(data.foundUser)
         );
         localStorage.setItem("token", JSON.stringify(data.encodedToken));
+
         toast.success("Signed in successfully.", {
           style: {
             fontSize: "large",
@@ -123,6 +130,53 @@ export const AuthProvider = ({ children }) => {
     navigate("/");
   };
 
+  const handleLogInFormSubmit = (e) => {
+    e.preventDefault();
+    if (userDetails.email.trim() === "" || userDetails.password.trim() === "") {
+      toast.error("Please Sign In", {
+        style: {
+          fontSize: "large",
+          padding: ".5rem",
+          background: "#252525",
+          color: "whitesmoke",
+        },
+      });
+    } else {
+      userSignIn(e);
+    }
+  };
+
+  const handleCreateAccount = (e) => {
+    e.preventDefault();
+    if (
+      signUpUserDetail.firstName.trim() === "" ||
+      signUpUserDetail.lastName.trim() === "" ||
+      signUpUserDetail.email.trim() === "" ||
+      signUpUserDetail.password.trim() === "" ||
+      signUpUserDetail.confirmPassword.trim() === ""
+    ) {
+      toast.error("Please Sign Up", {
+        style: {
+          fontSize: "large",
+          padding: ".5rem",
+          background: "#252525",
+          color: "whitesmoke",
+        },
+      });
+    } else if (signUpUserDetail.password !== signUpUserDetail.confirmPassword) {
+      toast.error("Password does not matched.", {
+        style: {
+          fontSize: "large",
+          padding: ".5rem",
+          background: "#252525",
+          color: "whitesmoke",
+        },
+      });
+    } else {
+      userSigUpHandle(e);
+    }
+  };
+
   const values = {
     auth,
     authDispatch,
@@ -135,6 +189,10 @@ export const AuthProvider = ({ children }) => {
     setUserDetails,
     userSignIn,
     userToken,
+    handleLogInFormSubmit,
+    handleCreateAccount,
+    isPswrd,
+    pswrdVisible,
   };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };

@@ -76,3 +76,23 @@
 .guest_color {
   color: #b21368;
 }
+
+.password-container {
+  position: relative;
+  display: inline-block;
+}
+
+.passwordToggle {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  padding: 4px 8px;
+}
+
+.passwordInput {
+  padding-right: 40px;
+  width: auto;
+}
