@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+// import { InnerFooter } from "../../component/InnerFooter";
 import { AuthContext } from "../../Context/AuthContext";
 
 import "../signup/signup.css";
