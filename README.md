@@ -2,6 +2,8 @@
 
 This folder contains the Mock Backend created for E-Commerce App for jewellery.
 
+### Feature -
+
 * Home page
 * Product listing page
 * Filter and sort products
@@ -14,6 +16,8 @@ This folder contains the Mock Backend created for E-Commerce App for jewellery.
 * Authentication:
 * User Signup
 * User Login
+
+## Build With - 
 
 * React JS
 * React Context API + useReducer + useState
