@@ -43,3 +43,67 @@
   transition: 0.3s;
   box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.3);
 }
+
+.checkOut_address_parent_div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.checkOut_address {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0.5rem;
+  border-radius: 5px;
+  padding: 1rem;
+  line-height: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.checkOut_address:hover {
+  transition: 0.3s;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.checkOut_div1 {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+.checkOut_div2 {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+.checkOut_div3 {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.checkOut_address_heading {
+  margin: 1rem;
+  font-size: x-large;
+}
+
+.selected_Address {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.selected_Address1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}

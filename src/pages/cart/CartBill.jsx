@@ -5,9 +5,8 @@ import { CartContext } from "../../Context/CartContext";
 import "../cart/cartbill.css";
 
 export const CartBill = () => {
-  const { cart, totalPrice, discount, discountedPrice } = useContext(
-    CartContext
-  );
+  const { cart, totalPrice, discount, discountedPrice } =
+    useContext(CartContext);
 
   return (
     <div>

@@ -5,14 +5,18 @@ import "../user/user.css";
 import { InnerFooter } from "../../component/InnerFooter";
 import { AuthContext } from "../../Context/AuthContext";
 import { SignIn } from "../signin/SignIn";
-// import { NavLink } from "react-router-dom";
 import { AddressForm } from "../../utils/AddressForm";
 import { AddressContext } from "../../Context/AddressContext";
 
 export const User = () => {
   const { signOut, auth } = useContext(AuthContext);
-  const { addedUser } = useContext(AddressContext);
-  const [isAddressModal, setIsAddressModal] = useState(false);
+  const {
+    addedUser,
+    isAddressModal,
+    setIsAddressModal,
+    deleteAddress,
+    handleEditAddress,
+  } = useContext(AddressContext);
 
   const user = JSON.parse(localStorage.getItem("signUpUserDetails"));
 
@@ -22,47 +26,66 @@ export const User = () => {
         <SignIn />
       ) : (
         <div className="user_div">
-          {" "}
           <img src="../user2.png" alt="profile" className="user_img" />
           <h2>
             Name : {user.firstName} {user.lastName}
           </h2>
           <h3> Email : {user.email} </h3>
           <>
-            {" "}
-            {addedUser.map((item) => (
-              <>
-                <p> {item.fullName} </p>{" "}
-              </>
-            ))}{" "}
+            {addedUser.map((item, index) => (
+              <div key={item.id} className="address_list">
+                <h3>{item.fullName}</h3>
+                <p> {item.mobileNumber} </p>
+                <p> {item.houseNumber} </p>
+                <div className="address_list_child_div">
+                  <p> {item.area} </p>
+                  <p> {item.city} </p>
+                  <p> {item.pincode} </p>
+                  <div>
+                    <button
+                      className="address_list_delete_btn"
+                      onClick={() => deleteAddress(item)}
+                    >
+                      Delete{" "}
+                    </button>
+                    <button
+                      onClick={() => handleEditAddress(index)}
+                      className="address_list_edit_btn"
+                    >
+                      {" "}
+                      Edit{" "}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </>
           <div>
-            {" "}
             <button className="user_button" onClick={signOut}>
               Sign Out{" "}
             </button>{" "}
             <button
-              onClick={() => setIsAddressModal(true)}
+              onClick={() => {
+                setIsAddressModal(true);
+              }}
               className="user_button"
             >
-              {" "}
-              Address
+              Add address
             </button>{" "}
           </div>
         </div>
       )}
+
       {isAddressModal && (
         <div
-          onClick={() => {
-            setIsAddressModal(false);
-          }}
+          onClick={() => setIsAddressModal(false)}
           className="address_modal_outer_div"
         >
           <div
             onClick={(e) => e.stopPropagation()}
             className="address_modal_outer_container"
           >
-            <AddressForm />
+            <AddressForm edit={true} />
           </div>
         </div>
       )}
@@ -70,10 +93,3 @@ export const User = () => {
     </div>
   );
 };
-
-{
-  /* <NavLink className="user_link" to="/address">
-                {" "}
-                Address{" "}
-              </NavLink>{" "} */
-}
