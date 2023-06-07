@@ -11,6 +11,7 @@ export const CartProvider = ({ children }) => {
   const { userToken } = useContext(AuthContext);
 
   const addToCart = async (product, userToken) => {
+    console.log(userToken);
     try {
       const response = await axios.post(
         "/api/user/cart",

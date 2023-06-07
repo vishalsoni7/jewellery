@@ -89,7 +89,7 @@ export const User = () => {
           </div>
         </div>
       )}
-      {auth.isLoggedIn && <InnerFooter />}
+      <InnerFooter />
     </div>
   );
 };

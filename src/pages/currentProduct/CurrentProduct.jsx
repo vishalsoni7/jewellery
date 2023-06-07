@@ -17,8 +17,10 @@ import { NavLink } from "react-router-dom";
 
 export const CurrentProduct = () => {
   const { data } = useContext(DataContext);
-  const { addToCart, userToken, inCart } = useContext(CartContext);
+  const { addToCart, inCart } = useContext(CartContext);
   const { addToWishlist, inWishlist } = useContext(WishListContext);
+
+  const userToken = localStorage.getItem("token");
 
   return (
     <div>

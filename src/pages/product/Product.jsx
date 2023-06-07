@@ -15,13 +15,14 @@ import { AuthContext } from "../../Context/AuthContext";
 
 export const Product = () => {
   const { auth } = useContext(AuthContext);
-  const { userToken } = useContext(AuthContext);
   const { addToCart, inCart } = useContext(CartContext);
   const { addToWishlist, inWishlist } = useContext(WishListContext);
   const { singleProduct } = useContext(DataContext);
   const {
     state: { filterData },
   } = useContext(DataContext);
+
+  const userToken = localStorage.getItem("token");
 
   return (
     <div>
