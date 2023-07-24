@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { toast } from "react-hot-toast";
+import { LoaderIcon, toast } from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 import { InnerFooter } from "../../component/InnerFooter";
 import { AuthContext } from "../../Context/AuthContext";
@@ -9,9 +9,9 @@ import { WishListContext } from "../../Context/WishListContext";
 import "../wishlist/wishlist.css";
 
 export const WishList = () => {
-  const { userToken } = useContext(AuthContext);
   const { wishlist, removeFromWishlist } = useContext(WishListContext);
   const { addToCart, handleQnty, inCart } = useContext(CartContext);
+  const userToken = localStorage.getItem("token");
 
   return (
     <div>

@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 import "../currentProduct/currentProduct.css";
 
 import { DataContext } from "../../Context/DataContext";
-//import { Loader } from "../../component/loader";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -19,7 +18,6 @@ export const CurrentProduct = () => {
   const { data } = useContext(DataContext);
   const { addToCart, inCart } = useContext(CartContext);
   const { addToWishlist, inWishlist } = useContext(WishListContext);
-
   const userToken = localStorage.getItem("token");
 
   return (
