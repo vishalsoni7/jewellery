@@ -44,6 +44,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const handleQnty = async (type, productId) => {
+    console.log(type);
     try {
       const response = await axios.post(
         `/api/user/cart/${productId}`,
