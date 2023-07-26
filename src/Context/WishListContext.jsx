@@ -2,7 +2,11 @@ import React from "react";
 import axios from "axios";
 import { createContext, useState } from "react";
 
-import toast from "react-hot-toast";
+import {
+  AddtowishlistToast,
+  RemoveWishlistToast,
+  HandleError,
+} from "../utils/Toast";
 
 export const WishListContext = createContext();
 
@@ -22,17 +26,11 @@ export const WishlistProvider = ({ children }) => {
       );
       if (response.status === 201) {
         setWishlist(response.data.wishlist);
-        toast.success("Item added to Wishlist.", {
-          style: {
-            fontSize: "large",
-            padding: ".5rem",
-            background: "#252525",
-            color: "whitesmoke",
-          },
-        });
+        AddtowishlistToast();
       }
     } catch (error) {
       console.error(error);
+      HandleError();
     }
   };
 
@@ -42,16 +40,10 @@ export const WishlistProvider = ({ children }) => {
         headers: { authorization: userToken },
       });
       setWishlist(response.data.wishlist);
-      toast.error("Item removed from wishlist!", {
-        style: {
-          fontSize: "large",
-          padding: ".5rem",
-          background: "#333",
-          color: "#fff",
-        },
-      });
+      RemoveWishlistToast();
     } catch (error) {
       console.error(error);
+      HandleError();
     }
   };
 

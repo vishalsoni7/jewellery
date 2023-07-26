@@ -14,8 +14,6 @@ export const CheckOut = () => {
 
   const navigate = useNavigate();
 
-  console.log(orderAddress);
-
   return (
     <>
       <h2 className="checkOut_address_heading"> CHECK OUT </h2>

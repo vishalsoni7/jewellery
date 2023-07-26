@@ -1,17 +1,15 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useState } from "react";
 import axios from "axios";
 
-import toast, { Toaster } from "react-hot-toast";
-import { AuthContext } from "./AuthContext";
+import { AddtoCartToast, RemoveToast, HandleError } from "../utils/Toast";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const { userToken } = useContext(AuthContext);
+  const userToken = localStorage.getItem("token");
 
   const addToCart = async (product, userToken) => {
-    console.log(userToken);
     try {
       const response = await axios.post(
         "/api/user/cart",
@@ -24,17 +22,11 @@ export const CartProvider = ({ children }) => {
       );
       if (response.status === 201) {
         setCart(response.data.cart);
-        toast.success("Item added to cart.", {
-          style: {
-            fontSize: "large",
-            padding: ".5rem",
-            background: "#252525",
-            color: "whitesmoke",
-          },
-        });
+        AddtoCartToast();
       }
     } catch (error) {
       console.error(error);
+      HandleError();
     }
   };
 
@@ -44,21 +36,15 @@ export const CartProvider = ({ children }) => {
         headers: { authorization: userToken },
       });
       setCart(response.data.cart);
-      toast.error("Item removed from cart!", {
-        style: {
-          fontSize: "large",
-          padding: ".5rem",
-          background: "#252525",
-          color: "whitesmoke",
-        },
-      });
+      RemoveToast();
     } catch (error) {
       console.error(error);
+      HandleError();
     }
   };
 
   const handleQnty = async (type, productId) => {
-    console.log(userToken);
+    console.log(type);
     try {
       const response = await axios.post(
         `/api/user/cart/${productId}`,
@@ -72,6 +58,7 @@ export const CartProvider = ({ children }) => {
       setCart(response.data.cart);
     } catch (error) {
       console.error(error);
+      HandleError();
     }
   };
 
@@ -108,7 +95,6 @@ export const CartProvider = ({ children }) => {
   return (
     <>
       <CartContext.Provider value={values}> {children} </CartContext.Provider>{" "}
-      <Toaster position="bottom-right" reverseOrder={false} />
     </>
   );
 };

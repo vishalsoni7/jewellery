@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 
 import { InnerFooter } from "../../component/InnerFooter";
-import { AuthContext } from "../../Context/AuthContext";
 import { CartContext } from "../../Context/CartContext";
 import { WishListContext } from "../../Context/WishListContext";
 
@@ -10,9 +9,10 @@ import "../cart/cart.css";
 import { CartBill } from "./CartBill";
 
 export const Cart = () => {
-  const { userToken } = useContext(AuthContext);
   const { addToWishlist } = useContext(WishListContext);
   const { cart, removeFromCart, handleQnty } = useContext(CartContext);
+  const userToken = localStorage.getItem("token");
+
   return (
     <div
       style={{

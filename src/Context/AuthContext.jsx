@@ -1,7 +1,14 @@
 import React from "react";
 import axios from "axios";
 
-import toast from "react-hot-toast";
+import {
+  SignInUser,
+  SignOutToast,
+  handleLogInFormSubmitToast,
+  handleCreateAccountToast,
+  handleCreateAccountToastError,
+  HandleError,
+} from "../utils/Toast";
 
 import { createContext, useReducer, useState } from "react";
 import { AuthReducer } from "../Reducer/AuthReducer";
@@ -29,10 +36,6 @@ export const AuthProvider = ({ children }) => {
     password: "",
   });
 
-  const [userToken, setUserToken] = useState(
-    localStorage.getItem("token") || ""
-  );
-
   const [isPswrd, setIsPswrd] = useState(false);
 
   const pswrdVisible = () => {
@@ -46,19 +49,12 @@ export const AuthProvider = ({ children }) => {
       } = await axios.post("/api/auth/signup", signUpUserDetail);
       localStorage.setItem("signUpUserDetails", JSON.stringify(createdUser));
       localStorage.setItem("token", JSON.stringify(encodedToken));
-      toast.success("Signed in successfully.", {
-        style: {
-          fontSize: "large",
-          padding: ".5rem",
-          background: "#252525",
-          color: "whitesmoke",
-        },
-      });
-      setUserToken(encodedToken);
+      SignInUser(createdUser);
       authDispatch({ type: "HANDLE_SIGN_IN", payload: true });
       navigate("/products");
     } catch (error) {
       console.error(error);
+      HandleError();
     }
   };
 
@@ -68,7 +64,6 @@ export const AuthProvider = ({ children }) => {
         email,
         password,
       });
-
       if (status === 200) {
         authDispatch({ type: "HANDLE_SIGN_IN", payload: true });
         localStorage.setItem(
@@ -76,17 +71,11 @@ export const AuthProvider = ({ children }) => {
           JSON.stringify(data.foundUser)
         );
         localStorage.setItem("token", JSON.stringify(data.encodedToken));
-        toast.success("Signed in successfully.", {
-          style: {
-            fontSize: "large",
-            padding: ".5rem",
-            background: "#252525",
-            color: "whitesmoke",
-          },
-        });
+        SignInUser(data.foundUser);
       }
     } catch (error) {
       console.log(error);
+      HandleError();
     }
   };
 
@@ -100,18 +89,11 @@ export const AuthProvider = ({ children }) => {
           JSON.stringify(data.foundUser)
         );
         localStorage.setItem("token", JSON.stringify(data.encodedToken));
-
-        toast.success("Signed in successfully.", {
-          style: {
-            fontSize: "large",
-            padding: ".5rem",
-            background: "#252525",
-            color: "whitesmoke",
-          },
-        });
+        SignInUser(data.foundUser);
       }
     } catch (error) {
       console.log(error);
+      HandleError();
     }
   };
 
@@ -119,28 +101,14 @@ export const AuthProvider = ({ children }) => {
     authDispatch({ type: "HANDLE_SIGN_OUT", payload: false });
     localStorage.removeItem("token");
     localStorage.removeItem("signUpUserDetails", signUpUserDetail);
-    toast.error("You have sign Out.", {
-      style: {
-        fontSize: "large",
-        padding: ".5rem",
-        background: "#252525",
-        color: "whitesmoke",
-      },
-    });
+    SignOutToast();
     navigate("/");
   };
 
   const handleLogInFormSubmit = (e) => {
     e.preventDefault();
     if (userDetails.email.trim() === "" || userDetails.password.trim() === "") {
-      toast.error("Please Sign In", {
-        style: {
-          fontSize: "large",
-          padding: ".5rem",
-          background: "#252525",
-          color: "whitesmoke",
-        },
-      });
+      handleLogInFormSubmitToast();
     } else {
       userSignIn(e);
     }
@@ -155,23 +123,9 @@ export const AuthProvider = ({ children }) => {
       signUpUserDetail.password.trim() === "" ||
       signUpUserDetail.confirmPassword.trim() === ""
     ) {
-      toast.error("Please Sign Up", {
-        style: {
-          fontSize: "large",
-          padding: ".5rem",
-          background: "#252525",
-          color: "whitesmoke",
-        },
-      });
+      handleCreateAccountToast();
     } else if (signUpUserDetail.password !== signUpUserDetail.confirmPassword) {
-      toast.error("Password does not matched.", {
-        style: {
-          fontSize: "large",
-          padding: ".5rem",
-          background: "#252525",
-          color: "whitesmoke",
-        },
-      });
+      handleCreateAccountToastError();
     } else {
       userSigUpHandle(e);
     }
@@ -188,7 +142,6 @@ export const AuthProvider = ({ children }) => {
     userDetails,
     setUserDetails,
     userSignIn,
-    userToken,
     handleLogInFormSubmit,
     handleCreateAccount,
     isPswrd,

@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
+import { Toaster } from "react-hot-toast";
 import { Landing } from "./landing/Landing";
 import Mockman from "mockman-js";
 
@@ -21,6 +22,7 @@ import { User } from "./pages/user/Profile";
 function App() {
   return (
     <div className="App">
+      <Toaster position="bottom-right" reverseOrder={false} />
       <Nevigation />
 
       <Routes>
